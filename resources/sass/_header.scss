@@ -1,0 +1,21 @@
+@use "config/variables" as v;
+@use "mixin" as m;
+
+header {
+    width: 100%;
+    height: 70px;
+    padding: 0 2%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    & .container {
+        height: 100%;
+        width: auto;
+
+        & img {
+            width: auto;
+            height: 100%;
+        }
+    }
+}

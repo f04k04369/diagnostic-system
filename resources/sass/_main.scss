@@ -1,0 +1,385 @@
+@use "config/fonts" as f;
+@use "config/variables" as v;
+@use "mixin" as m;
+
+
+// 共通
+.content {
+    background-color: map-get(v.$colors, backgroundWhite );
+    border-radius: 5px;
+    margin: 0 5%;
+}
+
+/// .main-visual {
+//     width: 100%;
+//     height: 400px;
+//     position: relative;
+
+//     & img {
+//         position: absolute;
+//         z-index: -1;
+//         height: 100%;
+//         width: 100%;
+//     }
+
+//     & p {
+//         color: map-get(v.$colors,textWhite);
+//         font-size: map-get(f.$fontSize,title_pc);
+//         @include m.mq(sp) {
+//             font-size: map-get(f.$fontSize,title_sp);
+//         }
+//         letter-spacing: 2px;
+//         line-height: 2;
+//         position: absolute;
+//         left: 20%;
+//         @include m.mq(sp) {
+//             left: 15px;
+//             line-height: 4;
+//         }
+//         top: 50%;
+//         transform: translateY(-50%);
+//     }
+// }
+
+// // index.html
+// .about-wrapper {
+//     width: 100%;
+//     height: auto;
+//     margin: 0px auto;
+//     max-width: 1100px;
+//     padding: 50px 5%;
+    
+//     & .about-title {
+//         text-align: center;
+//         margin: 0 auto 50px;
+//         color: map-get(v.$colors,textGreen);
+//         position: relative;
+
+//         &:after {
+//             content: "";
+//             margin: 0 auto;
+//             height: 3px;
+//             width: 60px;
+//             position: absolute;
+//             bottom: -5px;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             background-color: map-get(v.$colors,textGreen);
+//         }
+//     }
+    
+//     & .about-container {
+//         display: flex;
+//         @include m.mq(sp) {
+//             flex-wrap: wrap;
+//         }
+//         justify-content: center;
+//         align-items: center;
+//         // align-items: center;で大きさが決まる？
+
+//         & .about-container__caption {
+//             width: 50%;
+//             margin-right: 30px;
+//             @include m.mq(sp) {
+//                 width: 100%;
+//                 margin-left: 0px;
+//             }
+//             & img {
+//                 width: 100%;
+//                 height: 100%;
+//                 top: 0px;
+//                 left: 0px;
+//                 object-fit:cover;
+//             }
+//         }
+
+//         & .about-container__item {
+//             width: 50%;
+//             margin-left: 30px;
+//             @include m.mq(sp) {
+//                 width: 100%;
+//                 margin-left: 0px;
+//             }
+
+//             & .item__title {
+//                 margin-bottom: 30px;
+//             }
+
+//             & .item__title--large {
+//                 font-size: 25px;
+//             }
+//         }
+//     }
+// }
+
+// .service-wrapper {
+//     background-color: map-get(v.$colors, backgroundGreen);
+//     width: 100%;
+//     height: auto;
+//     padding: 50px 5%;
+
+//     & .service-title {
+//         text-align: center;
+//         margin: 0 auto 50px;
+//         color: map-get(v.$colors,textGreen);
+//         position: relative;
+
+//         &:after {
+//             content: "";
+//             margin: 0 auto;
+//             height: 3px;
+//             width: 60px;
+//             position: absolute;
+//             bottom: -5px;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             background-color: map-get(v.$colors,textGreen);
+//         }
+//     }
+
+//     & .service-wrapper__list {
+//         margin: 0 auto;
+//         display: flex;
+//         justify-content: space-around;
+//         @include m.mq(sp) {
+//             flex-wrap: wrap;
+//         }
+        
+//         max-width: 1100px;
+
+
+//         & .list__item {
+//             width: 30%;
+//             @include m.mq(sp) {
+//                 width: 100%;
+//                 margin-bottom:20px ;
+//             }
+//             background-color: map-get(v.$colors, backgroundWhite);
+//             box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.03);
+
+//             & .container__caption {
+//                 width: 100%;
+//                 height: auto;
+                
+//                 & img {
+//                     width: 100%;
+//                     height: auto;
+//                 }
+//             }
+
+//             & .container__body {
+//                 width: 100%;
+//                 height: auto;
+//                 padding: 20px 20px;
+//                 text-align: center;
+
+//                 & .body__title {
+//                     margin-bottom: 20px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// .news-wrapper {
+//     width: 100%;
+//     height: auto;
+//     margin: 0px auto;
+//     max-width: 1100px;
+//     padding: 50px 5%;
+
+//     & .news-title {
+//         text-align: center;
+//         margin: 0 auto 50px;
+//         color: map-get(v.$colors,textGreen);
+//         position: relative;
+
+//         &:after {
+//             content: "";
+//             margin: 0 auto;
+//             height: 3px;
+//             width: 60px;
+//             position: absolute;
+//             bottom: -5px;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             background-color: map-get(v.$colors,textGreen);
+//         }
+//     }
+
+//     & .news-container {
+//         width: 100%;
+//         height: auto;
+
+//         & .group__list {
+//             padding: 20px 55px;
+//             border-bottom: 1px solid #ddd;
+//             @include m.mq(sp) {
+//                 padding: 20px 0px;
+//             }
+
+//             & a {
+//                 display: flex;
+//                 justify-content: flex-start;
+//                 @include m.mq(sp) {
+//                     flex-direction: column;
+//                     align-items: flex-start;
+//                 }
+
+//                 & .list__date {
+//                     padding: 5px;
+//                     margin: 0 20px;
+//                     border-radius: 50px;
+//                     font-size: map-get(f.$fontSize, news_date);
+//                     @include m.mq(sp) {
+//                         margin: 20px 0;
+//                     }
+
+//                 }
+
+//                 & .list__date--gray {
+//                     background-color: map-get(v.$colors, backgroundGray);
+
+//                 }
+
+//                 & .list__date--white {
+//                     color: map-get(v.$colors,textGray);
+
+//                 }
+//             }
+//         }
+
+//         & .action__btn {
+//             margin: 50px auto 0px;
+//             padding: 15px;
+//         }
+
+//         & .action__btn--circle {
+//             border-radius: 50px;
+//             border: solid 0.5px;
+//             display: block;
+//             text-align: center;
+//             width: 300px;
+//         }
+//     }
+
+// }
+
+// .contact-wrapper {
+//     background-color: map-get(v.$colors, backgroundGreen);
+//     width: 100%;
+//     height: auto;
+//     margin: 0 auto;
+//     padding: 50px 5%;
+
+
+//     & .contact-title {
+//         text-align: center;
+//         margin: 0 auto 50px;
+//         color: map-get(v.$colors,textGreen);
+//         position: relative;
+
+//         &:after {
+//             content: "";
+//             margin: 0 auto;
+//             height: 3px;
+//             width: 60px;
+//             position: absolute;
+//             bottom: -5px;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             background-color: map-get(v.$colors,textGreen);
+//         }
+//     }
+
+//     & .contact-container {
+//         max-width: 1100px;
+//         margin: 0 auto;
+//         & .contact__catch {
+//             width: fit-content;
+//             margin: 0 auto;
+//             text-align: center;
+//             font-size: map-get(f.$fontSize, title_pc)
+//         }
+//     }
+//     & .action__btn {
+//         padding: 15px;
+//         width: 300px;
+//         display: block;
+//         margin: 50px auto;
+//         color: map-get(v.$colors, textWhite);
+//         text-align: center;
+//     }
+//     & .action__btn--circle {
+//         border-radius: 50px;
+
+//     }
+//     & .action__btn--green {
+//         background-color: map-get(v.$colors, btnGreen);
+//     }
+
+// }
+
+// // contact.html
+// .form-wrapper {
+//     width: 100%;
+//     height: auto;
+//     margin: 0 auto;
+//     padding: 50px 5%;
+
+
+//     & .form-title {
+//         text-align: center;
+//         margin: 0 auto 50px;
+//         color: map-get(v.$colors,textBlack);
+//         position: relative;
+
+//     }
+
+//     & .form-container {
+//         max-width: 850px;
+//         margin: 0 auto;
+
+//         & .form__item {
+//             margin-bottom: 20px;
+//             position: relative;
+
+//             & .item__text {
+
+//                 & span {
+//                     background-color: map-get(v.$colors, backgroundRed);
+//                     color: map-get(v.$colors, textWhite);
+//                     font-size: 10px;
+//                     margin: 0px 10px;
+//                 }
+//             }
+
+//             & .item__input-area {
+//                 padding: 10px;
+//                 border: solid 0.5px map-get(v.$colors, textGreen);
+//                 border-radius: 5px;
+//             }
+
+//             & .item__input-area--large {
+//                 height: 45vh;
+//             }
+//         }
+//     }
+//     & .action__btn {
+//         padding: 15px;
+//         width: 300px;
+//         display: block;
+//         margin: 50px auto;
+//         color: map-get(v.$colors, textWhite);
+//         text-align: center;
+//     }
+//     & .action__btn--circle {
+//         border-radius: 50px;
+
+//     }
+//     & .action__btn--green {
+//         background-color: map-get(v.$colors, btnGreen);
+//     }
+
+// }

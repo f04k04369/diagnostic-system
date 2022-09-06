@@ -14,25 +14,34 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     {{-- Styles --}}
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
-    <div class="title">
-        @yield('title')
-    </div>
+    <header>
+        <div class="container">
+            <img src="{{ asset('img/bottok_logo_white.png') }}" alt="BottoKのロゴ">
+        </div>
+    </header>
 
     <div class="content">
         @yield('content')
     </div>
 
-    <div class="side">
-        @section('side')
-         <p>サイドメニュー</p>   
-        @show
-    </div>
-    <header>
-        
-    </header>
+    <footer>
+        <div class="footer-container">
+            <div class="left">
+                <p>株式会社 BottoK</p>
+                <p>福岡県福岡市博多区祇園町8-13 1F The Company 内</p>
+                <p>Tel: 050-8881-6590</p>
+            </div>
+            <div class="right">
+                <a href="">サービス</a>
+                <a href="">会社概要</a>
+                <a href="">お問合せ</a>
+            </div>
+        </div>
+        <p>©️ 2022 BottoK.inc</p>
+    </footer>
 </body>
 </html>
