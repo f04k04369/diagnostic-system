@@ -48,7 +48,63 @@ header .container img {
 .content {
   background-color: #ffffff;
   border-radius: 5px;
-  margin: 0 5%;
+  width: 90%;
+  height: auto;
+  padding: 2% 2%;
+  margin: 0 auto;
+}
+
+.home-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+}
+.home-container .home-container_right {
+  width: 50%;
+  height: auto;
+}
+.home-container .home-container_left {
+  width: 50%;
+  height: auto;
+}
+.home-container .home-container_left .top-form {
+  display: flex;
+  flex-direction: column;
+}
+.home-container .home-container_left .top-form #company-name {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+  border: solid 1px #ccc;
+  border-radius: 6px;
+  outline: 0;
+  transition: 0.3s;
+  -webkit-appearance: none;
+}
+.home-container .home-container_left .top-form .company-name:focus {
+  border: 1px solid #00b5ad;
+}
+.home-container .home-container_left .top-form .submit-btn {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #00b5ad;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border: 1px #00b5ad solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.home-container .home-container_left .top-form .submit-btn:hover {
+  color: fff;
+  background-color: #00b5ad;
 }
 
 footer {

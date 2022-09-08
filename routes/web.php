@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
+Route::post('/question', [\App\Http\Controllers\QuestionController::class, 'question']);
+Route::post('/result', [\App\Http\Controllers\ResultController::class, 'result']);
