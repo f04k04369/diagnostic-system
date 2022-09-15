@@ -3,7 +3,7 @@
 @section('content')
     <div class="result-container">
         <div class="total-result">
-            <div class="rank">
+            <div class="total-result__rank">
                 <p>総合評価</p>
                 <div class="rank__word">
                     <p>A</p>
@@ -12,7 +12,9 @@
                     <p>70/100</p>
                 </div>
             </div>
-            <div class="total-result__graph"></div>
+            <div class="total-result__graph">
+                <canvas id="chart02"></canvas>
+            </div>
         </div>
         <div class="category-results">
             <h2>採用フェーズごとの診断結果</h2>
@@ -92,7 +94,7 @@
             <div class="comparison-graph">
                 <p>あなたの回答は...<span>十分にできている</span></p>
                 <div class="graph">
-
+                    <canvas id="chart01"></canvas>
                 </div>
             </div>
         </div>

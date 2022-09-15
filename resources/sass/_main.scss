@@ -3,15 +3,70 @@
 @use "mixin" as m;
 
 
-// 共通
+// 共通パーツ
+
+// コンテンツ外枠
 .content {
     background-color: map-get(v.$colors, backgroundWhite );
     border-radius: 5px;
     width: 90%;
     height: auto;
     padding: 2% 2%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
+
+// フォーム共通部分
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    & span {
+        font-size: map-get(f.$fontSize, annotation );
+        color: map-get(v.$colors, textRed);
+    }
+
+    & .txt-area {
+        text-align: left;
+        box-sizing: border-box;
+        width: 80%;
+        height: 30px;
+        padding: 0 10px;
+        margin: 5px 0;
+        font-size: 16px;
+        color: #333;
+        border: solid 1px #ccc;
+        border-radius: 6px;
+        outline: 0;
+        transition: 0.3s;
+        -webkit-appearance: none;
+    }
+
+    & .txt-area:focus {
+        border: 1px solid #00b5ad;
+    }
+    
+    & .submit-btn {
+        margin-top: 100px;
+        text-align: center;
+        width: 200px;
+        display: inline-block;
+        padding: 0.4em 1.6em;
+        font-size: 0.8em;
+        color: #00b5ad;
+        text-decoration: none;
+        user-select: none;
+        border: 1px #00b5ad solid;
+        border-radius: 3px;
+        transition: 0.4s ease;
+    }
+    
+    & .submit-btn:hover {
+        color: #fff;
+        background-color: #00b5ad;
+    }
+}
+
 
 // TOPページ
 .home-container {
@@ -20,60 +75,119 @@
     margin: 0 auto;
     display: flex;
 
-    & .home-container_right {
-        width: 50%;
-        height: auto;
-    }
-
+    
     & .home-container_left {
         width: 50%;
         height: auto;
-
-        & .top-form {
-            display: flex;
-            flex-direction: column;
-
-            & #company-name {
-                box-sizing: border-box;
-                width: 100%;
-                height: 30px;
-                padding: 0 10px;
-                margin: 5px 0;
-                font-size: 16px;
-                color: #333;
-                border: solid 1px #ccc;
-                border-radius: 6px;
-                outline: 0;
-                transition: 0.3s;
-                -webkit-appearance: none;
-            }
-
-            & .company-name:focus {
-                border: 1px solid #00b5ad;
-            }
-
-            & .submit-btn {
-                display: inline-block;
-                padding: 0.4em 1.6em;
-                font-size: 0.8em;
-                color: #00b5ad;
-                text-decoration: none;
-                user-select: none;
-                border: 1px #00b5ad solid;
-                border-radius: 3px;
-                transition: 0.4s ease;
-            }
-
-            & .submit-btn:hover {
-                color: fff;
-                background-color: #00b5ad;
-            }
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        & h1 {
+            margin-bottom: 30px;
         }
+    
+        & p {
+            margin-bottom: 50px;
+        }
+
     }
 
+    & .home-container_right {
+        width: 50%;
+        height: auto;
+        position: relative;
 
+        & .img-1 {
+            width: fit-content;
+            height: 80%;
+        }
+
+        & .img-2 {
+            width: fit-content;
+            height: 80%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: rotate(20deg);
+            transform-origin: 0 100%;
+        }
+
+    }
 }
 
+// 設問ページ
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & form {
+        margin-top: 100px;
+
+        & .question_word {
+            margin-bottom: 100px;
+        }
+    }
+}
+
+// 結果表示ページ
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .total-result {
+        display: flex;
+        width: 100%;
+
+        & .total-result__rank {
+            width: 50%;
+            text-align: center;
+        }
+
+        & .total-result__graph {
+            width: 50%;
+        }
+    }
+}
+
+.category-results {
+        width: 100%;
+        margin-top: 50px;
+        text-align: center;
+
+    & .category-results__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        & .result__container {
+            width: 24%;
+            border: 1px solid map-get(v.$colors ,textGreen );
+            border-radius: 10px;
+            padding: 5px;
+            text-align: center;
+        }
+    }
+}
+
+.result-comparison {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+
+    & .quesition-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+
+    }
+}
 /// .main-visual {
 //     width: 100%;
 //     height: 400px;

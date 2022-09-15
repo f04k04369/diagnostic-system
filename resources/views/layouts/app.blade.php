@@ -10,9 +10,7 @@
     {{-- resset.css --}}
     <link rel="stylesheet" href="{{ asset('css/resset.css') }}">
 
-    {{-- Scripts --}}
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -23,11 +21,11 @@
             <img src="{{ asset('img/bottok_logo_white.png') }}" alt="BottoKのロゴ">
         </div>
     </header>
-
+    
     <div class="content">
         @yield('content')
     </div>
-
+    
     <footer>
         <div class="footer-container">
             <div class="left">
@@ -43,5 +41,15 @@
         </div>
         <p>©️ 2022 BottoK.inc</p>
     </footer>
+    
+    {{-- jQuery --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    {{-- chart.js --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    {{-- jQuery.inview --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    {{-- 自作js --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
 </body>
 </html>

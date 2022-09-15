@@ -10,6 +10,10 @@ body {
     background-color: map-get(v.$colors,backgroundGreen );
 }
 
+h1 {
+    font-size: map-get(f.$fontSize ,title_pc );
+}
+
 h2 {
     font-size: map-get(f.$fontSize,title_pc);
 }
