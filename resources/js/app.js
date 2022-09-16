@@ -42,7 +42,7 @@ var ctx=document.getElementById("chart02");//グラフを描画したい場所�
 var chart=new Chart(ctx,{
 type:'horizontalBar',//グラフのタイプ
 data:{//グラフのデータ
-  labels:["診断結果","過去平均"],//データの名前
+  labels:["診断結果と過去平均"],//データの名前
   datasets: [
         {
           label: '診断結果',
