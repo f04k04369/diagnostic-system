@@ -48,6 +48,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     {{-- jQuery.inview --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    {{-- html2canvas --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     {{-- 自作js --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 

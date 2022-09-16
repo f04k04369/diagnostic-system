@@ -134,6 +134,15 @@
 }
 
 // 結果表示ページ
+#content {
+    background-color: map-get(v.$colors, backgroundWhite );
+    border-radius: 5px;
+    width: 90%;
+    height: auto;
+    padding: 2% 2%;
+    margin: 50px auto;
+}
+
 .result-container {
     display: flex;
     flex-direction: column;
@@ -185,7 +194,23 @@
         display: flex;
         justify-content: space-around;
 
+    }
+    & #result {
+        width: 500px;
+        height: auto;
+    }
+}
 
+.private-meeting {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+
+    & .form-container {
+        margin: 0 auto;
+        margin-top: 50px;
+        max-width: 800px;
+        width: 80%;
     }
 }
 /// .main-visual {

@@ -36,8 +36,7 @@ Chart.plugins.register({
 
 //=========== 棒グラフ（横・複数バー） ============//
 
-$('#chart02').on('inview', function(event, isInView) {//画面上に入ったらグラフを描画
-if (isInView) {
+$(document).ready(function(event) {//html全部読んだ後に描画
 
 var ctx=document.getElementById("chart02");//グラフを描画したい場所のid
 var chart=new Chart(ctx,{
@@ -47,11 +46,11 @@ data:{//グラフのデータ
   datasets: [
         {
           label: '診断結果',
-          data: [62.5, 65.9],
+          data: [62.5],
           backgroundColor: "rgba(219,39,91,0.5)"
         },{
           label: '過去平均',
-          data: [55.3, 89.7],
+          data: [55.3],
           backgroundColor: "rgba(130,201,169,0.5)"
         }
       ]
@@ -83,7 +82,6 @@ options:{//グラフのオプション
   }
 }
 });       
-}
 });
 
 
@@ -122,23 +120,28 @@ Chart.plugins.register({
 
 //=========== 棒グラフ（横・複数バー） ============//
 
-$('#chart01').on('inview', function(event, isInView) {//画面上に入ったらグラフを描画
-if (isInView) {
+$(document).ready(function(event) {//html全部読んだ後に発火
 
 var ctx=document.getElementById("chart01");//グラフを描画したい場所のid
 var chart=new Chart(ctx,{
 type:'horizontalBar',//グラフのタイプ
 data:{//グラフのデータ
-  labels:["診断結果","過去平均"],//データの名前
+  labels:["他社回答"],//データの名前
   datasets: [
         {
-          label: '診断結果',
-          data: [62.5, 65.9],
+          label: '十分にできている',
+          data: [62],
           backgroundColor: "rgba(219,39,91,0.5)"
-        },{
-          label: '過去平均',
-          data: [55.3, 89.7],
+        },
+        {
+          label: 'できているが十分ではない',
+          data: [18],
           backgroundColor: "rgba(130,201,169,0.5)"
+        },
+        {
+          label: 'できていない',
+          data: [20],
+          backgroundColor: "orange"
         }
       ]
 },
@@ -147,33 +150,27 @@ options:{//グラフのオプション
     display: true//グラフの説明を表示
     },
     scales:{
-        x : {
-            stacked:true,
-        },
-        y :{
-            stacked:true,
-        },
-
         xAxes:[//グラフ縦軸（X軸）設定
         {
-        ticks:{
-            beginAtZero:true,//0からスタート
-            suggestedMax: 100,//最大が100
-            suggestedMin: 0,//最小が0
-            stepSize: 10,//10づつ数値が刻まれる
-            callback: function(value){
-            return  value +  '点'//数字＋点で表示     
-        }
-        }
+          stacked: true,
+          ticks:{
+              beginAtZero:true,//0からスタート
+              suggestedMax: 100,//最大が100
+              suggestedMin: 0,//最小が0
+              stepSize: 10,//10づつ数値が刻まれる
+              callback: function(value){
+              return  value +  '点'//数字＋点で表示     
+          }
+          }
         }
     ],
     yAxes:[//グラフ横（Y軸）設定
         {
-            barPercentage:0.5,//バーの太さ
+          stacked: true,
+          barPercentage:0.5,//バーの太さ
         }
     ]
     }
 }
 });       
-}
 });
