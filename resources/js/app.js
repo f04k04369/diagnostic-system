@@ -32,12 +32,13 @@ Chart.plugins.register({
         });
     }
 });
+// =================================================================================
 
 
 //=========== 棒グラフ（横・複数バー） ============//
 
 $(document).ready(function(event) {//html全部読んだ後に描画
-var ctx=document.getElementById("chart02");//グラフを描画したい場所のid
+var ctx=document.getElementById("chart00");//グラフを描画したい場所のid
 var chart=new Chart(ctx,{
 type:'horizontalBar',//グラフのタイプ
 data:{//グラフのデータ
@@ -82,6 +83,8 @@ options:{//グラフのオプション
 }
 });       
 });
+// =================================================================================
+
 
 
 // ---------結果表示画面設問グラフ-------------
@@ -115,9 +118,10 @@ Chart.plugins.register({
         });
     }
 });
+// =================================================================================
 
 
-//=========== 棒グラフ（横・複数バー） ============//
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.1 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
 
@@ -174,8 +178,515 @@ options:{//グラフのオプション
 });       
 });
 
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.02 ============//
 
-// 回答内容の表示
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart02");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.03 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart03");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.04 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart04");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.05 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart05");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.06 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart06");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.07 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart07");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.08 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart08");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.09 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart09");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+//=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.10 ============//
+
+$(document).ready(function(event) {//html全部読んだ後に発火
+
+  var ctx=document.getElementById("chart10");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [62],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [18],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [20],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                suggestedMax: 100,//最大が100
+                suggestedMin: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '点'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
+      ]
+      }
+  }
+  });       
+  });
+                  
+
+  
+
+// 回答内容の表示===================================================================
 // 1
 let question1 = (point) => {
   if(point == 0) {
@@ -376,6 +887,136 @@ let question10 = (point) => {
     return question10_result
   }
 };
+// =================================================================================
+
+// 各フェーズごとランク表示====================================================================
+// フェーズ1
+let phase1_rank = (point) => {
+  if(point <= 0) {
+    const phase1_rank_result = 'C';
+    return phase1_rank_result;
+
+  } else if(point <= 10) {
+    const phase1_rank_result ='B';
+    return phase1_rank_result;
+
+  } else if(point <= 20) {
+    const phase1_rank_result = 'A';
+    return phase1_rank_result;
+
+  } else if(point == 30) {
+    const phase1_rank_result = 'S';
+    return phase1_rank_result;
+
+  }else{
+    const phase1_rank_result = 'エラー';
+    return phase1_rank_result;
+  }
+};
+
+// フェーズ2
+let phase2_rank = (point) => {
+  if(point <= 0) {
+    const phase2_rank_result = 'C';
+    return phase2_rank_result;
+
+  } else if(point <= 10) {
+    const phase2_rank_result ='B';
+    return phase2_rank_result;
+
+  } else if(point <= 20) {
+    const phase2_rank_result = 'A';
+    return phase2_rank_result;
+
+  } else if(point == 30) {
+    const phase2_rank_result = 'S';
+    return phase2_rank_result;
+
+  }else{
+    const phase2_rank_result = 'エラー';
+    return phase2_rank_result;
+  }
+};
+
+// フェーズ3
+let phase3_rank = (point) => {
+  if(point <= 0) {
+    const phase3_rank_result = 'C';
+    return phase3_rank_result;
+
+  } else if(point <= 10) {
+    const phase3_rank_result ='B';
+    return phase3_rank_result;
+
+  } else if(point <= 20) {
+    const phase3_rank_result = 'A';
+    return phase3_rank_result;
+
+  } else if(point == 30) {
+    const phase3_rank_result = 'S';
+    return phase3_rank_result;
+
+  }else{
+    const phase3_rank_result = 'エラー';
+    return phase3_rank_result;
+  }
+};
+
+// フェーズ4
+let phase4_rank = (point) => {
+  if(point <= 10) {
+    const phase4_rank_result = 'C';
+    return phase4_rank_result;
+
+  } else if(point <= 20) {
+    const phase4_rank_result ='B';
+    return phase4_rank_result;
+
+  } else if(point <= 30) {
+    const phase4_rank_result = 'A';
+    return phase4_rank_result;
+
+  } else if(point == 40) {
+    const phase4_rank_result = 'S';
+    return phase4_rank_result;
+
+  }else{
+    const phase4_rank_result = 'エラー';
+    return phase4_rank_result;
+  }
+};
+
+// =================================================================================
+
+
+// 総合点ランク表示====================================================================
+
+let total_rank = (point) => {
+  if(point <= 50) {
+    const total_rank_result = 'C';
+    return total_rank_result;
+
+  } else if(point <= 70) {
+    const total_rank_result ='B';
+    return total_rank_result;
+
+  } else if(point <= 90) {
+    const total_rank_result = 'A';
+    return total_rank_result;
+
+  } else if(point == 100) {
+    const total_rank_result = 'S';
+    return total_rank_result;
+
+  }else{
+    const total_rank_result = 'エラー';
+    return total_rank_result;
+  }
+};
+// =================================================================================
+
+
+// 各関数の戻り値を格納 ===============================================================
 
 const quesitoin1_result = question1(point_1);
 const quesitoin2_result = question2(point_2);
@@ -387,6 +1028,32 @@ const quesitoin7_result = question7(point_7);
 const quesitoin8_result = question8(point_8);
 const quesitoin9_result = question9(point_9);
 const quesitoin10_result = question10(point_10);
+const total_rank_result = total_rank(result_data);
+const phase1_rank_result = phase1_rank(phase_1);
+const phase2_rank_result = phase2_rank(phase_2);
+const phase3_rank_result = phase3_rank(phase_3);
+const phase4_rank_result = phase4_rank(phase_4);
+// =================================================================================
+
+
+// 各関数の戻り値格納後、viewへの出力 ===================================================
+document.querySelector('#q1').insertAdjacentHTML('beforeend',`<span>${quesitoin1_result}</span>`);
+document.querySelector('#q2').insertAdjacentHTML('beforeend',`<span>${quesitoin2_result}</span>`);
+document.querySelector('#q3').insertAdjacentHTML('beforeend',`<span>${quesitoin3_result}</span>`);
+document.querySelector('#q4').insertAdjacentHTML('beforeend',`<span>${quesitoin4_result}</span>`);
+document.querySelector('#q5').insertAdjacentHTML('beforeend',`<span>${quesitoin5_result}</span>`);
+document.querySelector('#q6').insertAdjacentHTML('beforeend',`<span>${quesitoin6_result}</span>`);
+document.querySelector('#q7').insertAdjacentHTML('beforeend',`<span>${quesitoin7_result}</span>`);
+document.querySelector('#q8').insertAdjacentHTML('beforeend',`<span>${quesitoin8_result}</span>`);
+document.querySelector('#q9').insertAdjacentHTML('beforeend',`<span>${quesitoin9_result}</span>`);
+document.querySelector('#q10').insertAdjacentHTML('beforeend',`<span>${quesitoin10_result}</span>`);
+document.querySelector('#total_rank_result').insertAdjacentHTML('beforeend',`<p>${total_rank_result}</p>`);
+document.querySelector('#phase-1').insertAdjacentHTML('beforeend',`<p>${phase1_rank_result}</p>`);
+document.querySelector('#phase-2').insertAdjacentHTML('beforeend',`<p>${phase2_rank_result}</p>`);
+document.querySelector('#phase-3').insertAdjacentHTML('beforeend',`<p>${phase3_rank_result}</p>`);
+document.querySelector('#phase-4').insertAdjacentHTML('beforeend',`<p>${phase4_rank_result}</p>`);
+// =================================================================================
+
 
 console.log(quesitoin1_result);
 console.log(quesitoin2_result);
@@ -398,4 +1065,5 @@ console.log(quesitoin7_result);
 console.log(quesitoin8_result);
 console.log(quesitoin9_result);
 console.log(quesitoin10_result);
+console.log(total_rank_result);
 

@@ -27,15 +27,14 @@
             <div class="total-result">
                 <div class="total-result__rank">
                     <p>総合評価</p>
-                    <div class="rank__word">
-                        <p>A</p>
+                    <div class="rank__word" id="total_rank_result">
                     </div>
                     <div class="rank__point">
                         <p>{{ $total_point }}/100</p>
                     </div>
                 </div>
                 <div class="total-result__graph">
-                    <canvas id="chart02"></canvas>
+                    <canvas id="chart00"></canvas>
                 </div>
             </div>
             <div class="category-results">
@@ -46,28 +45,28 @@
                         説明会への<br>
                         応募・参加時
                         </p>
-                        <p>A</p>
+                        <div id="phase-1"></div>
                     </div>
                     <div class="result__container">
                         <p>エントリーや本選考<br>
                         応募をするかどうか<br>
                         判断するとき
                         </p>
-                        <p>B</p>
+                        <div id="phase-2"></div>
                     </div>
 
                     <div class="result__container">
                         <p>エントリーシート<br>
                         作成時や応募前<br>
                         </p>
-                        <p>C</p>
+                        <div id="phase-3"></div>
                     </div>
 
                     <div class="result__container">
                         <p>内定承諾や辞退を<br>
                         判断する際<br>
                         </p>
-                        <p>S</p>
+                        <div id="phase-4"></div>
                     </div>
 
                 </div>
@@ -117,27 +116,22 @@
                 </div>
 
                 <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q1"></span></p>
+                    <p id="q1">あなたの回答は...</p>
                     <div class="graph">
                         <canvas id="chart01"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.2</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>採用ページに求める人材像の詳細まで記載できているか？
                         </p>
                     </div>
                     <div class="question-tags">
@@ -170,25 +164,25 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q2"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart02"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.3</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>採用ページに求める人材像に近い社員紹介があるか？<br>
+                            ・紹介社員が入社したきっかけ<br>
+                            ・紹介社員からの企業の魅力への言及<br>
+                            ・紹介社員が仕事を通して達成したい夢・目標<br>
+                            ・紹介社員のプライベートの過ごし方<br>
+                            など
                         </p>
                     </div>
                     <div class="question-tags">
@@ -221,24 +215,23 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q3"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart03"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.4</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
+                        <p>多様性への取り組みについて<br>
+                            ・男女雇用と活躍<br>
+                            ・健常者/障がい者雇用と活躍<br>
+                            ・バックグラウンドに関わらない活躍<br>
                             が一つ以上伝わりやすく記載されているか？
                         </p>
                     </div>
@@ -272,25 +265,22 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q4"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart04"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.5</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>コーポレートサイト、採用サイトに会社概要についての以下内容が記載されているか<br>
+                            ・事業の社会貢献性について<br>
+                            ・事業実績<br>
                         </p>
                     </div>
                     <div class="question-tags">
@@ -323,25 +313,23 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q5"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart05"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.6</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>採用サイトに業務概要についての記載があるか？<br>
+                            ・職種<br>
+                            ・具体的な業務/プロジェクト内容<br>
+                            ・働き方のイメージ（１日のスケジュールなど）<br>
                         </p>
                     </div>
                     <div class="question-tags">
@@ -374,25 +362,23 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q6"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart06"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.7</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>採用サイトに就業規則についての記載があるか？<br>
+                            ・給与・賞与（水準イメージ）<br>
+                            ・労働時間<br>
+                            ・福利厚生<br>
                         </p>
                     </div>
                     <div class="question-tags">
@@ -425,25 +411,22 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q7"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart07"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.8</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>採用サイトに職場環境の記載はあるか？<br>
+                            ・オフィス紹介（写真・動画）<br>
+                            ・働く環境の具体的説明<br>
                         </p>
                     </div>
                     <div class="question-tags">
@@ -476,25 +459,22 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q8"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart08"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.9</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>採用サイトに入社後のキャリアについての記載はあるか？<br>
+                            ・入社後のキャリアパスモデル<br>
+                            ・研修制度の紹介<br>
                         </p>
                     </div>
                     <div class="question-tags">
@@ -527,25 +507,24 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q9"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart09"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
 
             <div class="result-comparison">
                 
                 <div class="quesition-container">
                     <div class="question-number">
-                        <p>Q.1</p>
+                        <p>Q.10</p>
                     </div>
                     <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
+                        <p>採用情報やお知らせを月2回以上更新しているか？<br>
+                            ・インターンシップの案内<br>
+                            ・会社説明会の案内<br>
+                            ・採用イベントの案内<br>
+                            ・採用ブログ、その他
                         </p>
                     </div>
                     <div class="question-tags">
@@ -578,12 +557,13 @@
                 <div class="comparison-graph">
                     <p>あなたの回答は...<span id="q10"></span></p>
                     <div class="graph">
-                        <canvas id="chart01"></canvas>
+                        <canvas id="chart10"></canvas>
                     </div>
                 </div>
 
-                <img src="" id="result" />
             </div>
+
+            <img src="" id="result" />
 
             <div class="private-meeting">
                 <h2>〜個別相談について〜</h2>
@@ -697,6 +677,10 @@
         const point_8 = @json($point_8);
         const point_9 = @json($point_9);
         const point_10 = @json($point_10);
+        const phase_1 = @json($phase_1);
+        const phase_2 = @json($phase_2);
+        const phase_3 = @json($phase_3);
+        const phase_4 = @json($phase_4);
     </script>
 
     
