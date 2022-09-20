@@ -31,7 +31,7 @@
                         <p>A</p>
                     </div>
                     <div class="rank__point">
-                        <p>70/100</p>
+                        <p>{{ $total_point }}/100</p>
                     </div>
                 </div>
                 <div class="total-result__graph">
@@ -72,8 +72,11 @@
 
                 </div>
             </div>
+
+            <h2>設問ごとの回答比較</h2>
+
             <div class="result-comparison">
-                <h2>設問ごとの回答比較</h2>
+                
                 <div class="quesition-container">
                     <div class="question-number">
                         <p>Q.1</p>
@@ -114,7 +117,7 @@
                 </div>
 
                 <div class="comparison-graph">
-                    <p>あなたの回答は...<span>十分にできている</span></p>
+                    <p>あなたの回答は...<span id="q1"></span></p>
                     <div class="graph">
                         <canvas id="chart01"></canvas>
                     </div>
@@ -122,6 +125,466 @@
 
                 <img src="" id="result" />
             </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q2"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q3"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q4"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q5"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q6"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q7"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q8"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q9"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
+            <div class="result-comparison">
+                
+                <div class="quesition-container">
+                    <div class="question-number">
+                        <p>Q.1</p>
+                    </div>
+                    <div class="question-word">
+                        <p>採用ページに候補者向けに<br>
+                            ・経営者メッセージ<br>
+                            ・企業理念<br>
+                            ・企業の将来像<br>
+                            が一つ以上伝わりやすく記載されているか？
+                        </p>
+                    </div>
+                    <div class="question-tags">
+                        <p>この設問の<br>
+                            効果のあるフェーズ
+                        </p>
+                        <div class="question-tags__container">
+                            <div class="question-tag">
+                                <p>インターンシップへの<br>
+                                    応募・参加時
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーシート<br>
+                                    作成時や応募前
+                                </p>
+                            </div>
+
+                            <div class="question-tag">
+                                <p>エントリーや選考応募を<br>
+                                    するかどうか判断するとき
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-graph">
+                    <p>あなたの回答は...<span id="q10"></span></p>
+                    <div class="graph">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+
+                <img src="" id="result" />
+            </div>
+
             <div class="private-meeting">
                 <h2>〜個別相談について〜</h2>
                 <p>レポートに対してのフィードバックが欲しい場合は<br>
@@ -221,6 +684,21 @@
         </div>
         <p>©️ 2022 BottoK.inc</p>
     </footer>
+
+    <script>
+        const result_data = @json($total_point);
+        const point_1 = @json($point_1);
+        const point_2 = @json($point_2);
+        const point_3 = @json($point_3);
+        const point_4 = @json($point_4);
+        const point_5 = @json($point_5);
+        const point_6 = @json($point_6);
+        const point_7 = @json($point_7);
+        const point_8 = @json($point_8);
+        const point_9 = @json($point_9);
+        const point_10 = @json($point_10);
+    </script>
+
     
     {{-- jQuery --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
