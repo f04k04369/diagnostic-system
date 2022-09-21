@@ -3,9 +3,9 @@
 @use "mixin" as m;
 
 
-// 共通パーツ
+// ===================== 共通パーツ ===================
 
-// コンテンツ外枠
+// ===================== コンテンツ外枠 =================
 .content {
     background-color: map-get(v.$colors, backgroundWhite );
     border-radius: 5px;
@@ -15,7 +15,7 @@
     margin: 50px auto;
 }
 
-// フォーム共通部分
+// ====================== フォーム共通部分 ===============
 .form-container {
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@
 }
 
 
-// TOPページ
+//===================== TOPページ ======================
 .home-container {
     width: 100%;
     height: auto;
@@ -117,7 +117,7 @@
     }
 }
 
-// 設問ページ
+// ================== 設問ページ ===========================
 .question-container {
     display: flex;
     flex-direction: column;
@@ -131,9 +131,17 @@
             margin-bottom: 100px;
         }
     }
+
+    & .question-box {
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid map-get(v.$colors, textGray);
+        width: 80%;
+        max-width: 900px;
+    }
 }
 
-// 結果表示ページ
+// ================ 結果表示ページ =============================
 #content {
     background-color: map-get(v.$colors, backgroundWhite );
     border-radius: 5px;
@@ -153,8 +161,20 @@
         width: 100%;
 
         & .total-result__rank {
-            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             text-align: center;
+            width: 50%;
+
+            & .rank__word--fontsize {
+                font-size: map-get(f.$fontSize, total_rank);
+                font-weight: bold;
+            }
+
+            & .total_point--fontsize {
+                font-size: map-get(f.$fontSize, phase_rank );
+            }
         }
 
         & .total-result__graph {
@@ -164,9 +184,9 @@
 }
 
 .category-results {
-        width: 100%;
-        margin-top: 50px;
-        text-align: center;
+    margin: 50px 0 50px 0;
+    text-align: center;
+    width: 100%;
 
     & .category-results__container {
         width: 100%;
@@ -175,11 +195,19 @@
         margin-top: 20px;
 
         & .result__container {
-            width: 24%;
             border: 1px solid map-get(v.$colors ,textGreen );
             border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            justify-content: center;
             padding: 5px;
             text-align: center;
+            width: 24%;
+
+            & .phase-rank {
+                font-size: map-get(f.$fontSize, phase_rank);
+            }
         }
     }
 }
@@ -187,17 +215,65 @@
 .result-comparison {
     margin-top: 50px;
     width: 100%;
-    text-align: center;
 
     & .quesition-container {
-        width: 100%;
         display: flex;
         justify-content: space-around;
+        position: relative;
+        width: 100%;
 
+        & .question-number {
+            height: auto;
+            width: auto;
+
+            & p {
+                color: map-get(v.$colors, textOrange);
+                font-size: map-get(f.$fontSize, title_pc);
+            }
+        }
+
+        & .question-word {
+            text-align: left;
+        }
+
+        & .question-tags {
+            height: auto;
+            max-width: 500px;
+            width: auto;
+            
+            & .question-tags__container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+
+                & .question-tag {
+                    background-color: map-get(v.$colors, textGreen );
+                    border-radius: 10px;
+                    margin: 5px 5px 0 0;
+                    padding: 5px;
+                    width: fit-content;
+
+                    & p {
+                        color: map-get(v.$colors, textWhite );
+                        font-size: map-get(f.$fontSize, annotation);
+                    }
+                }
+            }
+        }
     }
-    & #result {
-        width: 500px;
-        height: auto;
+    & .comparison-graph {
+        text-align: center;
+        margin-top: 30px;
+
+        & p {
+            margin-bottom: 30px;
+
+            & span {
+                font-size: map-get(f.$fontSize, title_pc);
+            }
+        }
     }
 }
 

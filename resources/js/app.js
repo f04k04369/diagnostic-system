@@ -125,57 +125,75 @@ Chart.plugins.register({
 
 $(document).ready(function(event) {//html全部読んだ後に発火
 
-var ctx=document.getElementById("chart01");//グラフを描画したい場所のid
-var chart=new Chart(ctx,{
-type:'horizontalBar',//グラフのタイプ
-data:{//グラフのデータ
-  labels:["他社回答"],//データの名前
-  datasets: [
-        {
-          label: '十分にできている',
-          data: [62],
-          backgroundColor: "rgba(219,39,91,0.5)"
-        },
-        {
-          label: 'できているが十分ではない',
-          data: [18],
-          backgroundColor: "rgba(130,201,169,0.5)"
-        },
-        {
-          label: 'できていない',
-          data: [20],
-          backgroundColor: "orange"
-        }
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [100, 200, 50]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
+
+  var ctx=document.getElementById("chart01");//グラフを描画したい場所のid
+  var chart=new Chart(ctx,{
+  type:'horizontalBar',//グラフのタイプ
+  data:{//グラフのデータ
+    labels:["他社回答"],//データの名前
+    datasets: [
+          {
+            label: '十分にできている',
+            data: [top_point_par],
+            backgroundColor: "rgba(219,39,91,0.5)"
+          },
+          {
+            label: 'できているが十分ではない',
+            data: [middle_point_par],
+            backgroundColor: "rgba(130,201,169,0.5)"
+          },
+          {
+            label: 'できていない',
+            data: [row_point_par],
+            backgroundColor: "orange"
+          }
+        ]
+  },
+  options:{//グラフのオプション 
+      legend:{  
+      display: true//グラフの説明を表示
+      },
+      scales:{
+          xAxes:[//グラフ縦軸（X軸）設定
+          {
+            stacked: true,
+            ticks:{
+                beginAtZero:true,//0からスタート
+                Max: 100,//最大が100
+                Min: 0,//最小が0
+                stepSize: 10,//10づつ数値が刻まれる
+                callback: function(value){
+                return  value +  '%'//数字＋点で表示     
+            }
+            }
+          }
+      ],
+      yAxes:[//グラフ横（Y軸）設定
+          {
+            stacked: true,
+            barPercentage:0.5,//バーの太さ
+          }
       ]
-},
-options:{//グラフのオプション 
-    legend:{  
-    display: true//グラフの説明を表示
-    },
-    scales:{
-        xAxes:[//グラフ縦軸（X軸）設定
-        {
-          stacked: true,
-          ticks:{
-              beginAtZero:true,//0からスタート
-              suggestedMax: 100,//最大が100
-              suggestedMin: 0,//最小が0
-              stepSize: 10,//10づつ数値が刻まれる
-              callback: function(value){
-              return  value +  '点'//数字＋点で表示     
-          }
-          }
-        }
-    ],
-    yAxes:[//グラフ横（Y軸）設定
-        {
-          stacked: true,
-          barPercentage:0.5,//バーの太さ
-        }
-    ]
-    }
-}
-});       
+      }
+  }
+  });       
 });
 
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.02 ============//
@@ -1047,8 +1065,8 @@ document.querySelector('#q7').insertAdjacentHTML('beforeend',`<span>${quesitoin7
 document.querySelector('#q8').insertAdjacentHTML('beforeend',`<span>${quesitoin8_result}</span>`);
 document.querySelector('#q9').insertAdjacentHTML('beforeend',`<span>${quesitoin9_result}</span>`);
 document.querySelector('#q10').insertAdjacentHTML('beforeend',`<span>${quesitoin10_result}</span>`);
-document.querySelector('#total_rank_result').insertAdjacentHTML('beforeend',`<p>${total_rank_result}</p>`);
-document.querySelector('#phase-1').insertAdjacentHTML('beforeend',`<p>${phase1_rank_result}</p>`);
+document.querySelector('#total_rank_result').insertAdjacentHTML('beforeend',`<p class="rank__word--fontsize">${total_rank_result}</p>`);
+document.querySelector('#phase-1').insertAdjacentHTML('beforeend',`<p class="phase-rank">${phase1_rank_result}</p>`);
 document.querySelector('#phase-2').insertAdjacentHTML('beforeend',`<p>${phase2_rank_result}</p>`);
 document.querySelector('#phase-3').insertAdjacentHTML('beforeend',`<p>${phase3_rank_result}</p>`);
 document.querySelector('#phase-4').insertAdjacentHTML('beforeend',`<p>${phase4_rank_result}</p>`);

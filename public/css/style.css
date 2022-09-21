@@ -161,6 +161,13 @@ header .container img {
 .question-container form .question_word {
   margin-bottom: 100px;
 }
+.question-container .question-box {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #888888;
+  width: 80%;
+  max-width: 900px;
+}
 
 #content {
   background-color: #ffffff;
@@ -181,17 +188,27 @@ header .container img {
   width: 100%;
 }
 .result-container .total-result .total-result__rank {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  width: 50%;
+}
+.result-container .total-result .total-result__rank .rank__word--fontsize {
+  font-size: 100px;
+  font-weight: bold;
+}
+.result-container .total-result .total-result__rank .total_point--fontsize {
+  font-size: 48px;
 }
 .result-container .total-result .total-result__graph {
   width: 50%;
 }
 
 .category-results {
-  width: 100%;
-  margin-top: 50px;
+  margin: 50px 0 50px 0;
   text-align: center;
+  width: 100%;
 }
 .category-results .category-results__container {
   width: 100%;
@@ -200,26 +217,75 @@ header .container img {
   margin-top: 20px;
 }
 .category-results .category-results__container .result__container {
-  width: 24%;
   border: 1px solid #00ABAE;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
   padding: 5px;
   text-align: center;
+  width: 24%;
+}
+.category-results .category-results__container .result__container .phase-rank {
+  font-size: 48px;
 }
 
 .result-comparison {
   margin-top: 50px;
   width: 100%;
-  text-align: center;
 }
 .result-comparison .quesition-container {
-  width: 100%;
   display: flex;
   justify-content: space-around;
+  position: relative;
+  width: 100%;
 }
-.result-comparison #result {
-  width: 500px;
+.result-comparison .quesition-container .question-number {
   height: auto;
+  width: auto;
+}
+.result-comparison .quesition-container .question-number p {
+  color: #D98000;
+  font-size: 30px;
+}
+.result-comparison .quesition-container .question-word {
+  text-align: left;
+}
+.result-comparison .quesition-container .question-tags {
+  height: auto;
+  max-width: 500px;
+  width: auto;
+}
+.result-comparison .quesition-container .question-tags .question-tags__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.result-comparison .quesition-container .question-tags .question-tags__container .question-tag {
+  background-color: #00ABAE;
+  border-radius: 10px;
+  margin: 5px 5px 0 0;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.result-comparison .quesition-container .question-tags .question-tags__container .question-tag p {
+  color: #ffffff;
+  font-size: 10px;
+}
+.result-comparison .comparison-graph {
+  text-align: center;
+  margin-top: 30px;
+}
+.result-comparison .comparison-graph p {
+  margin-bottom: 30px;
+}
+.result-comparison .comparison-graph p span {
+  font-size: 30px;
 }
 
 .private-meeting {

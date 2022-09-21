@@ -26,11 +26,11 @@
         <div class="result-container">
             <div class="total-result">
                 <div class="total-result__rank">
-                    <p>総合評価</p>
+                    <p class="rank__title--fontsize">総合評価</p>
                     <div class="rank__word" id="total_rank_result">
                     </div>
                     <div class="rank__point">
-                        <p>{{ $total_point }}/100</p>
+                        <p class="rank__point--fontsize"><span class="total_point--fontsize">{{ $total_point }}</span>/100点</p>
                     </div>
                 </div>
                 <div class="total-result__graph">
