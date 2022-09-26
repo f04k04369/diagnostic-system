@@ -571,49 +571,20 @@
                     下記入力フォームよりお申し込みください。
                 </p>
                 <div class="form-container">
-                    <form method="post" action="https://bottok.net/Thanks">
+                    <form method="post" action="/thanks">
                         {{ csrf_field() }}
                         <table class="formTable">
                         <tr>
-                            <th><em>確認</em></th>
-                            <td>
-                                <div class="box_br">
-                                    <label>
-                                        <input type="radio" name="gender" value="テキスト1">
-                                        テキスト1
-                                    </label>
-                                </div>
-                                <div class="box_br">
-                                    <label>
-                                        <input type="radio" name="gender" value="テキスト2">
-                                        テキスト2
-                                    </label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>ご用件</th>
-                            <td><select name="ご用件">
-                                <option value="">選択してください</option>
-                                <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
-                                <option value="リンクについて">リンクについて</option>
-                            </select></td>
+                            <th>会社名<span>必須</span></th>
+                            <td><input size="20" type="text" class="wide" name="company_name" /></td>
                         </tr>
                         <tr>
                             <th>お名前<span>必須</span></th>
-                            <td><input size="20" type="text" class="wide" name="お名前" /></td>
-                        </tr>
-                        <tr>
-                            <th>電話番号（半角）<span>必須</span></th>
-                            <td><input size="30" type="text" class="wide" name="電話番号" /></td>
+                            <td><input size="20" type="text" class="wide" name="name" /></td>
                         </tr>
                         <tr>
                             <th>Mail（半角）</th>
-                            <td><input size="30" type="text" class="wide" name="Email" /></td>
-                        </tr>
-                        <tr>
-                            <th>お問い合わせ内容<br /></th>
-                            <td><textarea name="お問い合わせ内容" cols="50" rows="5"></textarea></td>
+                            <td><input size="30" type="text" class="wide" name="email" /></td>
                         </tr>
                         </table>
                         <div class="con_pri">
@@ -641,6 +612,7 @@
                                 <input type="checkbox" name="acceptance-714" value="1" aria-invalid="false" class="agree"><span class="check">プライバシーポリシーに同意する</span>
                             </label>
                         </div>
+                        <input type="hidden" name="" value="{{  }}">
                         <p class="submit-btn">
                             <span><input type="submit" value="　 確認 　" /></span>
                         </p>

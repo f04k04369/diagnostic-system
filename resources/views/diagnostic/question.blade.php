@@ -20,9 +20,9 @@
                 ・企業の将来像<br>
                 が一つ以上伝わりやすく記載されているか？
                 </p>
-                <input type="radio" name="point_1" value="10">十分にできている
-                <input type="radio" name="point_1" value="5">できているが十分ではない
-                <input type="radio" name="point_1" value="0">できていない
+                <input type="radio" name="point_1" value=10>十分にできている
+                <input type="radio" name="point_1" value=5>できているが十分ではない
+                <input type="radio" name="point_1" value=0>できていない
             </div>
 
             <div class="question-box">
@@ -31,9 +31,9 @@
                 </div>
                 <p class="question_word">採用ページに求める人材像の詳細まで記載できているか？
                 </p>
-                <input type="radio" name="point_2" value="10">十分にできている
-                <input type="radio" name="point_2" value="5">できているが十分ではない
-                <input type="radio" name="point_2" value="0">できていない
+                <input type="radio" name="point_2" value=10>十分にできている
+                <input type="radio" name="point_2" value=5>できているが十分ではない
+                <input type="radio" name="point_2" value=0>できていない
             </div>
 
             <div class="question-box">
