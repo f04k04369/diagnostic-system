@@ -4,6 +4,26 @@
 
 
 // ===================== 共通パーツ ===================
+.submit-btn {
+    margin-top: 100px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    padding: 0.4em 1.6em;
+    font-size: 0.8em;
+    color: #00b5ad;
+    text-decoration: none;
+    user-select: none;
+    border: 1px #00b5ad solid;
+    border-radius: 3px;
+    transition: 0.4s ease;
+}
+
+.submit-btn:hover {
+    color: #fff;
+    background-color: #00b5ad;
+    cursor: pointer;
+}
 
 // ===================== コンテンツ外枠 =================
 .content {
@@ -287,6 +307,21 @@
         margin-top: 50px;
         max-width: 800px;
         width: 80%;
+        height: 100%;
+
+        & .formTable {
+            width: 100%;
+        }
+
+        & .txt {
+            font-size: map-get(f.$fontSize, annotation);
+            text-align: left;
+
+            a {
+                color: blue;
+                font-size: map-get(f.$fontSize, annotation);
+            }
+        }
     }
 }
 /// .main-visual {

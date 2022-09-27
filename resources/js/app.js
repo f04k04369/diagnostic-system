@@ -50,7 +50,7 @@ data:{//グラフのデータ
           backgroundColor: "rgba(219,39,91,0.5)"
         },{
           label: '過去平均',
-          data: [55.3],
+          data: [average],
           backgroundColor: "rgba(130,201,169,0.5)"
         }
       ]
@@ -126,7 +126,7 @@ Chart.plugins.register({
 $(document).ready(function(event) {//html全部読んだ後に発火
 
   var answer = []; //DBから渡ってきた値を％に変換する
-    answer[0] = [100, 200, 50]; // 質問に対する各回答の数
+    answer[0] = [previous_q1_point_1, previous_q1_point_2, previous_q1_point_3]; // 質問に対する各回答の数
     var answer_count = []; // 全体の回答数
     answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
     var top_point= [];  // 十分できている数
@@ -200,6 +200,24 @@ $(document).ready(function(event) {//html全部読んだ後に発火
 
 $(document).ready(function(event) {//html全部読んだ後に発火
 
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q2_point_1, previous_q2_point_2, previous_q2_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
+
   var ctx=document.getElementById("chart02");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
   type:'horizontalBar',//グラフのタイプ
@@ -208,17 +226,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -233,11 +251,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -251,10 +269,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.03 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q3_point_1, previous_q3_point_2, previous_q3_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart03");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -264,17 +300,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -289,11 +325,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -307,10 +343,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.04 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q4_point_1, previous_q4_point_2, previous_q4_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart04");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -320,17 +374,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -345,11 +399,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -363,10 +417,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.05 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q5_point_1, previous_q5_point_2, previous_q5_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart05");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -376,17 +448,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -401,11 +473,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -419,10 +491,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.06 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q6_point_1, previous_q6_point_2, previous_q6_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart06");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -432,17 +522,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -457,11 +547,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -475,10 +565,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.07 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q7_point_1, previous_q7_point_2, previous_q7_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart07");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -488,17 +596,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -513,11 +621,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -531,10 +639,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.08 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q8_point_1, previous_q8_point_2, previous_q8_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart08");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -544,17 +670,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -569,11 +695,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -587,10 +713,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.09 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q9_point_1, previous_q9_point_2, previous_q9_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart09");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -600,17 +744,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -625,11 +769,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -643,10 +787,28 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
 //=========== 棒グラフ（横・複数バー） （表示先指定のスクリプト）chart.10 ============//
 
 $(document).ready(function(event) {//html全部読んだ後に発火
+
+  var answer = []; //DBから渡ってきた値を％に変換する
+    answer[0] = [previous_q10_point_1, previous_q10_point_2, previous_q10_point_3]; // 質問に対する各回答の数
+    var answer_count = []; // 全体の回答数
+    answer_count[0] = answer[0][0] + answer[0][1] + answer[0][2];
+    var top_point= [];  // 十分できている数
+    var middle_point = []; // できているが十分ではない数
+    var row_point = []; // できていない数
+    
+    // 割合の計算
+    top_point = answer[0][0] / answer_count[0];
+    middle_point = answer[0][1] / answer_count[0];
+    row_point = answer[0][2] / answer_count[0];
+    
+    // パーセンテージ標記への変換
+    top_point_par = parseInt(top_point * 10000) / 100 ;
+    middle_point_par = parseInt(middle_point * 10000) / 100 ;
+    row_point_par = parseInt(row_point * 10000) / 100 ;
 
   var ctx=document.getElementById("chart10");//グラフを描画したい場所のid
   var chart=new Chart(ctx,{
@@ -656,17 +818,17 @@ $(document).ready(function(event) {//html全部読んだ後に発火
     datasets: [
           {
             label: '十分にできている',
-            data: [62],
+            data: [top_point_par],
             backgroundColor: "rgba(219,39,91,0.5)"
           },
           {
             label: 'できているが十分ではない',
-            data: [18],
+            data: [middle_point_par],
             backgroundColor: "rgba(130,201,169,0.5)"
           },
           {
             label: 'できていない',
-            data: [20],
+            data: [row_point_par],
             backgroundColor: "orange"
           }
         ]
@@ -681,11 +843,11 @@ $(document).ready(function(event) {//html全部読んだ後に発火
             stacked: true,
             ticks:{
                 beginAtZero:true,//0からスタート
-                suggestedMax: 100,//最大が100
-                suggestedMin: 0,//最小が0
+                Max: 100,//最大が100
+                Min: 0,//最小が0
                 stepSize: 10,//10づつ数値が刻まれる
                 callback: function(value){
-                return  value +  '点'//数字＋点で表示     
+                return  value +  '%'//数字＋点で表示     
             }
             }
           }
@@ -699,7 +861,7 @@ $(document).ready(function(event) {//html全部読んだ後に発火
       }
   }
   });       
-  });
+});
                   
 
   
@@ -1067,9 +1229,9 @@ document.querySelector('#q9').insertAdjacentHTML('beforeend',`<span>${quesitoin9
 document.querySelector('#q10').insertAdjacentHTML('beforeend',`<span>${quesitoin10_result}</span>`);
 document.querySelector('#total_rank_result').insertAdjacentHTML('beforeend',`<p class="rank__word--fontsize">${total_rank_result}</p>`);
 document.querySelector('#phase-1').insertAdjacentHTML('beforeend',`<p class="phase-rank">${phase1_rank_result}</p>`);
-document.querySelector('#phase-2').insertAdjacentHTML('beforeend',`<p>${phase2_rank_result}</p>`);
-document.querySelector('#phase-3').insertAdjacentHTML('beforeend',`<p>${phase3_rank_result}</p>`);
-document.querySelector('#phase-4').insertAdjacentHTML('beforeend',`<p>${phase4_rank_result}</p>`);
+document.querySelector('#phase-2').insertAdjacentHTML('beforeend',`<p class="phase-rank">${phase2_rank_result}</p>`);
+document.querySelector('#phase-3').insertAdjacentHTML('beforeend',`<p class="phase-rank">${phase3_rank_result}</p>`);
+document.querySelector('#phase-4').insertAdjacentHTML('beforeend',`<p class="phase-rank">${phase4_rank_result}</p>`);
 // =================================================================================
 
 

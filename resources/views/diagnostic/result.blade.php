@@ -22,6 +22,7 @@
         </div>
     </header>
 
+    
     <div id="content">
         <div class="result-container">
             <div class="total-result">
@@ -563,7 +564,10 @@
 
             </div>
 
-            <img src="" id="result" />
+            <div id="outputBtn" class="submit-btn">
+                画像表示
+            </div>
+            <a id="getImage" href="" style="display: none"></a>
 
             <div class="private-meeting">
                 <h2>〜個別相談について〜</h2>
@@ -576,34 +580,24 @@
                         <table class="formTable">
                         <tr>
                             <th>会社名<span>必須</span></th>
-                            <td><input size="20" type="text" class="wide" name="company_name" /></td>
+                            <td><input size="20" type="text" class="txt-area" name="company_name" /></td>
                         </tr>
                         <tr>
                             <th>お名前<span>必須</span></th>
-                            <td><input size="20" type="text" class="wide" name="name" /></td>
+                            <td><input size="20" type="text" class="txt-area" name="name" /></td>
                         </tr>
                         <tr>
                             <th>Mail（半角）</th>
-                            <td><input size="30" type="text" class="wide" name="email" /></td>
+                            <td><input size="30" type="text" class="txt-area" name="email" /></td>
                         </tr>
                         </table>
                         <div class="con_pri">
                             <div class="box_pri">
                                 <div class="box_tori">
                                     <h4>プライバシー</h4>
-                                    <p class="txt">プライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシー</p>
-                                </div>
-                                <div class="box_num">
-                                    <h4>プライバシー</h4>
-                                    <p class="txt">プライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシー</p>
-                                </div>
-                                <div class="box_num">
-                                    <h4>プライバシー</h4>
-                                    <p class="txt">プライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシー</p>
-                                </div>
-                                <div class="box_num">
-                                    <h4>プライバシー</h4>
-                                    <p class="txt">プライバシープライバシープライバシープライバシープライバシープライバシープライバシープライバシー</p>
+                                    <p class="txt">以下のチェックボタン及び送信ボタンをクリックすると、お客様が要求した情報を提供する目的で、株式会社BottoKが上記から送信された個人情報を保管・処理することに同意したものとみなされます。<br>
+                                    弊社個人情報保護方針については<a href="https://bottok.net/corporate/privacy">「個人情報保護方針」</a>をご参照ください。
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -612,7 +606,18 @@
                                 <input type="checkbox" name="acceptance-714" value="1" aria-invalid="false" class="agree"><span class="check">プライバシーポリシーに同意する</span>
                             </label>
                         </div>
-                        <input type="hidden" name="" value="{{  }}">
+                        <input type="hidden" name="point_1" value="{{ $point_1 }}">
+                        <input type="hidden" name="point_2" value="{{ $point_2 }}">
+                        <input type="hidden" name="point_3" value="{{ $point_3 }}">
+                        <input type="hidden" name="point_4" value="{{ $point_4 }}">
+                        <input type="hidden" name="point_5" value="{{ $point_5 }}">
+                        <input type="hidden" name="point_6" value="{{ $point_6 }}">
+                        <input type="hidden" name="point_7" value="{{ $point_7 }}">
+                        <input type="hidden" name="point_8" value="{{ $point_8 }}">
+                        <input type="hidden" name="point_9" value="{{ $point_9 }}">
+                        <input type="hidden" name="point_10" value="{{ $point_10 }}">
+                        <input type="hidden" name="total_point" value="{{ $total_point }}">
+
                         <p class="submit-btn">
                             <span><input type="submit" value="　 確認 　" /></span>
                         </p>
@@ -653,6 +658,50 @@
         const phase_2 = @json($phase_2);
         const phase_3 = @json($phase_3);
         const phase_4 = @json($phase_4);
+
+// ============ 設問1 ===============
+        const previous_q1_point_1 = @json($previous_q1_point_1); 
+        const previous_q1_point_2 = @json($previous_q1_point_2); 
+        const previous_q1_point_3 = @json($previous_q1_point_3); 
+
+        const previous_q2_point_1 = @json($previous_q2_point_1); 
+        const previous_q2_point_2 = @json($previous_q2_point_2); 
+        const previous_q2_point_3 = @json($previous_q2_point_3); 
+
+        const previous_q3_point_1 = @json($previous_q3_point_1); 
+        const previous_q3_point_2 = @json($previous_q3_point_2); 
+        const previous_q3_point_3 = @json($previous_q3_point_3); 
+
+        const previous_q4_point_1 = @json($previous_q4_point_1); 
+        const previous_q4_point_2 = @json($previous_q4_point_2); 
+        const previous_q4_point_3 = @json($previous_q4_point_3); 
+
+        const previous_q5_point_1 = @json($previous_q5_point_1); 
+        const previous_q5_point_2 = @json($previous_q5_point_2); 
+        const previous_q5_point_3 = @json($previous_q5_point_3); 
+
+        const previous_q6_point_1 = @json($previous_q6_point_1); 
+        const previous_q6_point_2 = @json($previous_q6_point_2); 
+        const previous_q6_point_3 = @json($previous_q6_point_3); 
+
+        const previous_q7_point_1 = @json($previous_q7_point_1); 
+        const previous_q7_point_2 = @json($previous_q7_point_2); 
+        const previous_q7_point_3 = @json($previous_q7_point_3); 
+
+        const previous_q8_point_1 = @json($previous_q8_point_1); 
+        const previous_q8_point_2 = @json($previous_q8_point_2); 
+        const previous_q8_point_3 = @json($previous_q8_point_3); 
+
+        const previous_q9_point_1 = @json($previous_q9_point_1); 
+        const previous_q9_point_2 = @json($previous_q9_point_2); 
+        const previous_q9_point_3 = @json($previous_q9_point_3); 
+
+        const previous_q10_point_1 = @json($previous_q10_point_1); 
+        const previous_q10_point_2 = @json($previous_q10_point_2); 
+        const previous_q10_point_3 = @json($previous_q10_point_3); 
+
+        const average = @json($average); 
+
     </script>
 
     
@@ -663,24 +712,36 @@
     {{-- jQuery.inview --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     {{-- html2canvas --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     {{-- 自作js --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- スクリーンショット撮影機能 --}}
     <script>
         //ロードされた際の処理として実施：
-        window.onload = function(){
+        // window.onload = function(){
     
-          //HTML内に画像を表示
-          html2canvas(document.getElementById("content"),{
-            onrendered: function(canvas){
-              //imgタグのsrcの中に、html2canvasがレンダリングした画像を指定する。
-              var imgData = canvas.toDataURL();
-              document.getElementById("result").src = imgData;
-            }
-          });    
-        }
-      </script>
+        //   //HTML内に画像を表示
+        //   html2canvas(document.getElementById("content"),{
+        //     onrendered: function(canvas){
+        //       //imgタグのsrcの中に、html2canvasがレンダリングした画像を指定する。
+        //       var imgData = canvas.toDataURL();
+        //       document.getElementById("result").src = imgData;
+        //     }
+        //   });    
+        // }
+
+        const outputBtn = document.getElementById("outputBtn");  //ボタン
+        const element = document.getElementById("content");  //画像化したい要素
+        const getImage = document.getElementById("getImage");  //ダウンロード用隠しリンク
+
+        outputBtn.addEventListener('click', function() {
+        html2canvas(element).then(canvas => {
+            getImage.setAttribute("href", canvas.toDataURL());
+            getImage.setAttribute("download", "sample.png");
+            getImage.click();
+        });			
+        })
+    </script>
 
 </body>
 </html>

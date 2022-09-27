@@ -17,7 +17,7 @@ class ResultSeeder extends Seeder
     public function run()
     {
         DB::table('results')->insert([
-            'user_id' => '1',
+            // 'user_id' => '1',
             'point_1' => '5',
             'point_2' => '0',
             'point_3' => '10',
@@ -29,7 +29,7 @@ class ResultSeeder extends Seeder
             'point_9' => '5',
             'point_10' => '5',
             'total_point' => '55',
-            'capture' => '/img/result_image_results.png'
+            // 'capture' => '/img/result_image_results.png'
         ]);
     }
 }

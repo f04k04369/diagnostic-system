@@ -15,8 +15,8 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->integer('point_1');
             $table->integer('point_2');
             $table->integer('point_3');
@@ -28,7 +28,7 @@ class CreateResultsTable extends Migration
             $table->integer('point_9');
             $table->integer('point_10');
             $table->integer('total_point');
-            $table->string('capture');
+            $table->string('capture')->nullable();
             $table->timestamps();
         });
     }
