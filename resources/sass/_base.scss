@@ -1,0 +1,39 @@
+@use "config/fonts" as f; 
+@use "config/variables" as v;
+
+
+body {
+    font-family: map-get(f.$fontFamily,text);
+    color: map-get(v.$colors,textBlack);
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    background-color: map-get(v.$colors,backgroundGreen );
+}
+
+h1 {
+    font-size: map-get(f.$fontSize ,title_pc );
+}
+
+h2 {
+    font-size: map-get(f.$fontSize,title_pc);
+}
+
+h3 {
+    font-size: map-get(f.$fontSize,sub_title_pc);;
+}
+
+p {
+    font-size: map-get(f.$fontSize,text_pc);
+}
+
+a {
+    font-size: map-get(f.$fontSize,text_pc);
+    text-decoration: none;
+    color: map-get(v.$colors,textBlack)
+
+}
+
+li {
+    list-style: none;
+}
+

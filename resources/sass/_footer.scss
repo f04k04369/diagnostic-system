@@ -1,0 +1,43 @@
+@use "config/fonts" as f;
+@use "config/variables" as v;
+
+footer {
+    margin: 0 auto;
+
+    & .footer-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0px;
+
+        & .left{
+            width: 50%;
+            height: auto;
+            padding-left: 5%;
+
+            & p {
+                color: map-get(v.$colors, textWhite);
+                text-align: left;
+
+            }
+        }
+
+        & .right{
+            width: 50%;
+            height: auto;
+            padding-left: 5%;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            
+            & a {
+                color: map-get(v.$colors, textWhite);
+            }
+        }
+    }
+
+    & p {
+        color: map-get(v.$colors, textWhite);
+        text-align: center;
+    }
+}
