@@ -17,7 +17,11 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('company_name');
             $table->string('name');
+            $table->string('department_name');
+            $table->string('job_title');
             $table->string('email')->unique();
+            $table->string('phone_number')->unique();
+            $table->string('company_url');
             $table->timestamps();
         });
     }

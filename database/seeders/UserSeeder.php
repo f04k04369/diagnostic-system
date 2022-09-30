@@ -17,8 +17,12 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'company_name' => "株式会社BottoK",
-            'email' => "1111111@gmail.com",
             'name' => "山田　太郎",
+            'department_name' => "開拓部",
+            'job_title' => "課長",
+            'email' => "1111111@gmail.com",
+            'phone_number' => "08011112222",
+            'company_url' => "https://bottok.net/"
         ]);
     }
 }

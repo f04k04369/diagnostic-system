@@ -109,20 +109,20 @@ header .container img {
   border: 1px solid #00b5ad;
 }
 .form-container .submit-btn {
-  margin-top: 100px;
-  text-align: center;
-  width: 200px;
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  border: 1px #00b5ad solid;
+  border-radius: 3px;
   color: #00b5ad;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-top: 100px;
+  padding: 0.4em 1.6em;
+  text-align: center;
   text-decoration: none;
+  transition: 0.4s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  border: 1px #00b5ad solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
+  width: 200px;
 }
 .form-container .submit-btn:hover {
   color: #fff;
@@ -136,12 +136,13 @@ header .container img {
   display: flex;
 }
 .home-container .home-container_left {
-  width: 50%;
-  height: auto;
-  text-align: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  height: auto;
   justify-content: center;
+  text-align: center;
+  width: 50%;
 }
 .home-container .home-container_left h1 {
   margin-bottom: 30px;
