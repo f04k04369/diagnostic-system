@@ -22,10 +22,10 @@ class ResultController extends Controller
         $point_8 = $request->point_8;
         $point_9 = $request->point_9;
         $point_10 = $request->point_10;
-        $phase_1 = $point_1 + $point_2 + $point_3;
-        $phase_2 = $point_4 + $point_5 + $point_6;
-        $phase_3 = $point_7 + $point_8 + $point_9;
-        $phase_4 = $point_2 + $point_3 + $point_9 + $point_10;
+        $phase_1 = $point_1 + $point_5 + $point_6 + $point_7 + $point_10;
+        $phase_2 = $point_1 + $point_2 + $point_3 + $point_5 + $point_6 + $point_7 + $point_9;
+        $phase_3 = $point_1 + $point_2 + $point_3 + $point_5;
+        $phase_4 = $point_3 + $point_4 + $point_5 + $point_6 + $point_7 + $point_8 + $point_9;
         $total_point = $point_1 + $point_2 + $point_3 + $point_4 + $point_5 + $point_6 + $point_7 + $point_8 + $point_9 + $point_10;
 
 
@@ -212,7 +212,11 @@ class ResultController extends Controller
         $user = new User();
         $user->company_name = $request->company_name;
         $user->name = $request->name;
+        $user->department_name = $request->department_name;
+        $user->job_title = $request->job_title;
         $user->email = $request->email;
+        $user->phone_number = $request->phone_number;
+        $user->company_url = $request->company_name;
         $user->save();
 
         // hiddenで保持していた回答結果をDBへ渡す処理

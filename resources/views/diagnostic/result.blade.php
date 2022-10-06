@@ -25,553 +25,266 @@
     
     <div id="content">
         <div class="result-container">
+            <div class="comment">
+                <p>貴社採用ページの<br>
+                候補者への魅力の伝わり方は...
+            </p>
+        </div>
             <div class="total-result">
-                <div class="total-result__rank">
-                    <p class="rank__title--fontsize">総合評価</p>
-                    <div class="rank__word" id="total_rank_result">
+                <div class="total_result__container">
+                    <div class="total-result__rank">
+                        <p class="rank__title--fontsize">総合評価</p>
+                        <div class="rank__word" id="total_rank_result">
+                        </div>
+                        <div class="rank__point">
+                            <p class="rank__point--fontsize"><span class="total_point--fontsize">{{ $total_point }}</span>/100点</p>
+                        </div>
                     </div>
-                    <div class="rank__point">
-                        <p class="rank__point--fontsize"><span class="total_point--fontsize">{{ $total_point }}</span>/100点</p>
+                    <div class="total-result__graph">
+                        <canvas id="chart00"></canvas>
                     </div>
                 </div>
-                <div class="total-result__graph">
-                    <canvas id="chart00"></canvas>
-                </div>
+                <div id="total_result__feed"></div>
             </div>
             <div class="category-results">
-                <h2>採用フェーズごとの診断結果</h2>
+                <h2 class="sub-title">採用フェーズごとの診断結果</h2>
                 <div class="category-results__container">
                     <div class="result__container">
-                        <p>インターンシップや<br>
-                        説明会への<br>
-                        応募・参加時
+                        <p class="title">〜会社説明会応募まで
                         </p>
-                        <div id="phase-1"></div>
+                        <p class="word">評価</p>
+                        <div id="phase-1_1"></div>
                     </div>
                     <div class="result__container">
-                        <p>エントリーや本選考<br>
-                        応募をするかどうか<br>
-                        判断するとき
+                        <p class="title">会社説明会から<br>
+                        本選考応募時
                         </p>
-                        <div id="phase-2"></div>
-                    </div>
-
-                    <div class="result__container">
-                        <p>エントリーシート<br>
-                        作成時や応募前<br>
-                        </p>
-                        <div id="phase-3"></div>
+                        <p class="word">評価</p>
+                        <div id="phase-2_1"></div>
                     </div>
 
                     <div class="result__container">
-                        <p>内定承諾や辞退を<br>
-                        判断する際<br>
+                        <p class="title">選考プロセス時<br>
+                        （一次選考前〜最終選考まで）
                         </p>
-                        <div id="phase-4"></div>
+                        <p class="word">評価</p>
+                        <div id="phase-3_1"></div>
                     </div>
 
+                    <div class="result__container">
+                        <p class="title">内定通知から<br>
+                        入社まで<br>
+                        </p>
+                        <p class="word">評価</p>
+                        <div id="phase-4_1"></div>
+                    </div>
+
+                    <div class="triangle"><img src="{{ asset('img/triangle.png')}}" alt="フロー"></div>
                 </div>
             </div>
-
-            <h2>設問ごとの回答比較</h2>
-
-            <div class="result-comparison">
+            
+            <div class="result-phase">
+                <h2 class="sub-title">各フェーズの詳細評価</h2>
                 
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.1</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用ページに候補者向けに<br>
-                            ・経営者メッセージ<br>
-                            ・企業理念<br>
-                            ・企業の将来像<br>
-                            が一つ以上伝わりやすく記載されているか？
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
+                <div class="phase-container">
+                    <div class="contaier">
+                        <div class="phase-rank">
+                            <div class="phase-word">
+                                <h3>〜会社説明会応募まで</h3>
                             </div>
+                            <div id="phase-1_2"></div>
+                            
+                        </div>
+                        <div class="question-tags">
+                            <p class="question-tags__title">求職者が重要視する情報
+                            </p>
+                            <div class="question-tags__container">
+                                <div class="question-tag">
+                                    <p>ビジョン・代表メッセージ（Q1）</p>
+                                </div>
 
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
+                                
+                                <div class="question-tag">
+                                    <p>事業内容・実績（Q5）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>日常の業務について（Q6）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>待遇・ワークライフバランス（Q7）</p>
+                                </div>
+
+                                <div class="question-tag">
+                                    <p>採用情報について（Q10）</p>
+                                </div>
+                                
                             </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
                         </div>
                     </div>
+                    <div id="phase-1_feed" class="phase_feed"></div>
                 </div>
 
-                <div class="comparison-graph">
-                    <p id="q1">あなたの回答は...</p>
-                    <div class="graph">
-                        <canvas id="chart01"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.2</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用ページに求める人材像の詳細まで記載できているか？
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
+                <div class="phase-container">
+                    <div class="contaier">
+                        <div class="phase-rank">
+                            <div class="phase-word">
+                                <h3>会社説明会から<br>
+                                本選考応募時
+                                </h3>
                             </div>
+                            <div id="phase-2_2"></div>
+                            
+                        </div>
+                        <div class="question-tags">
+                            <p class="question-tags__title">求職者が重要視する情報
+                            </p>
+                            <div class="question-tags__container">
+                                <div class="question-tag">
+                                    <p>ビジョン・代表メッセージ（Q1）</p>
+                                </div>
 
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
+                                <div class="question-tag">
+                                    <p>採用コンセプト・求める人物像（Q2）</p>
+                                </div>
+
+                                <div class="question-tag">
+                                    <p>社員紹介について（Q3）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>事業内容・実績（Q5）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>日常の業務について（Q6）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>待遇・ワークライフバランス（Q7）</p>
+                                </div>
+
+                                <div class="question-tag">
+                                    <p>キャリアパス・研修制度（Q9）</p>
+                                </div>
+
+                                <div class="question-tag">
+                                    <p>採用情報について（Q10）</p>
+                                </div>
+
                             </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
                         </div>
                     </div>
+                    <div id="phase-2_feed" class="phase_feed"></div>
                 </div>
 
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q2"></span></p>
-                    <div class="graph">
-                        <canvas id="chart02"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.3</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用ページに求める人材像に近い社員紹介があるか？<br>
-                            ・紹介社員が入社したきっかけ<br>
-                            ・紹介社員からの企業の魅力への言及<br>
-                            ・紹介社員が仕事を通して達成したい夢・目標<br>
-                            ・紹介社員のプライベートの過ごし方<br>
-                            など
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
+                <div class="phase-container">
+                    <div class="contaier">
+                        <div class="phase-rank">
+                            <div class="phase-word">
+                                <h3>選考プロセス時<br>
+                                （一次選考前〜最終選考まで）
+                                </h3>
                             </div>
-
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
+                            <div id="phase-3_2"></div>
+                            
+                        </div>
+                        <div class="question-tags">
+                            <p class="question-tags__title">求職者が重要視する情報
+                            </p>
+                            <div class="question-tags__container">
+                                <div class="question-tag">
+                                    <p>ビジョン・代表メッセージ（Q1）</p>
+                                </div>
+    
+                                <div class="question-tag">
+                                    <p>採用コンセプト・求める人物像（Q2）</p>
+                                </div>
+    
+                                <div class="question-tag">
+                                    <p>事業内容・実績（Q5）</p>
+                                </div>
+                                                            
+                                <div class="question-tag">
+                                    <p>待遇・ワークライフバランス（Q7）</p>
+                                </div>
                             </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
                         </div>
                     </div>
+                    <div id="phase-3_feed" class="phase_feed"></div>
                 </div>
 
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q3"></span></p>
-                    <div class="graph">
-                        <canvas id="chart03"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.4</p>
-                    </div>
-                    <div class="question-word">
-                        <p>多様性への取り組みについて<br>
-                            ・男女雇用と活躍<br>
-                            ・健常者/障がい者雇用と活躍<br>
-                            ・バックグラウンドに関わらない活躍<br>
-                            が一つ以上伝わりやすく記載されているか？
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
+                <div class="phase-container">
+                    <div class="contaier">
+                        <div class="phase-rank">
+                            <div class="phase-word">
+                                <h3>内定通知から                                入社まで
+                                </h3>
                             </div>
+                            <div id="phase-4_2"></div>
+                            
+                        </div>
+                        <div class="question-tags">
+                            <p class="question-tags__title">求職者が重要視する情報
+                            </p>
+                            <div class="question-tags__container">
+                                <div class="question-tag">
+                                    <p>女性活用・多様性への配慮（Q2）</p>
+                                </div>
 
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
+                                <div class="question-tag">
+                                    <p>社員紹介について（Q3）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>事業内容・実績（Q5）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>日常の業務について（Q6）</p>
+                                </div>
+                                
+                                <div class="question-tag">
+                                    <p>待遇・ワークライフバランス（Q7）</p>
+                                </div>
+
+                                <div class="question-tag">
+                                    <p>オフィス紹介・働く環境（Q8）</p>
+                                </div>
+
+                                <div class="question-tag">
+                                    <p>キャリアパス・研修制度（Q9）</p>
+                                </div>
+                                
                             </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
                         </div>
                     </div>
+                    <div id="phase-4_feed" class="phase_feed"></div>
                 </div>
 
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q4"></span></p>
-                    <div class="graph">
-                        <canvas id="chart04"></canvas>
-                    </div>
-                </div>
 
             </div>
 
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.5</p>
-                    </div>
-                    <div class="question-word">
-                        <p>コーポレートサイト、採用サイトに会社概要についての以下内容が記載されているか<br>
-                            ・事業の社会貢献性について<br>
-                            ・事業実績<br>
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
+            <div class="download">
+                <div class="container">
+                    <p class="download-word">
+                        下記のボタンから今回の診断結果をダウンロードすることができます。
+                    </p>
                 </div>
 
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q5"></span></p>
-                    <div class="graph">
-                        <canvas id="chart05"></canvas>
-                    </div>
+                <div id="outputBtn" class="submit-btn">
+                    診断結果のダウンロードはこちら
                 </div>
-
+                <a id="getImage" href="" style="display: none"></a>
             </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.6</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用サイトに業務概要についての記載があるか？<br>
-                            ・職種<br>
-                            ・具体的な業務/プロジェクト内容<br>
-                            ・働き方のイメージ（１日のスケジュールなど）<br>
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q6"></span></p>
-                    <div class="graph">
-                        <canvas id="chart06"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.7</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用サイトに就業規則についての記載があるか？<br>
-                            ・給与・賞与（水準イメージ）<br>
-                            ・労働時間<br>
-                            ・福利厚生<br>
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q7"></span></p>
-                    <div class="graph">
-                        <canvas id="chart07"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.8</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用サイトに職場環境の記載はあるか？<br>
-                            ・オフィス紹介（写真・動画）<br>
-                            ・働く環境の具体的説明<br>
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q8"></span></p>
-                    <div class="graph">
-                        <canvas id="chart08"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.9</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用サイトに入社後のキャリアについての記載はあるか？<br>
-                            ・入社後のキャリアパスモデル<br>
-                            ・研修制度の紹介<br>
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q9"></span></p>
-                    <div class="graph">
-                        <canvas id="chart09"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="result-comparison">
-                
-                <div class="quesition-container">
-                    <div class="question-number">
-                        <p>Q.10</p>
-                    </div>
-                    <div class="question-word">
-                        <p>採用情報やお知らせを月2回以上更新しているか？<br>
-                            ・インターンシップの案内<br>
-                            ・会社説明会の案内<br>
-                            ・採用イベントの案内<br>
-                            ・採用ブログ、その他
-                        </p>
-                    </div>
-                    <div class="question-tags">
-                        <p>この設問の<br>
-                            効果のあるフェーズ
-                        </p>
-                        <div class="question-tags__container">
-                            <div class="question-tag">
-                                <p>インターンシップへの<br>
-                                    応募・参加時
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーシート<br>
-                                    作成時や応募前
-                                </p>
-                            </div>
-
-                            <div class="question-tag">
-                                <p>エントリーや選考応募を<br>
-                                    するかどうか判断するとき
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="comparison-graph">
-                    <p>あなたの回答は...<span id="q10"></span></p>
-                    <div class="graph">
-                        <canvas id="chart10"></canvas>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="outputBtn" class="submit-btn">
-                画像表示
-            </div>
-            <a id="getImage" href="" style="display: none"></a>
 
             <div class="private-meeting">
-                <h2>〜個別相談について〜</h2>
-                <p>レポートに対してのフィードバックが欲しい場合は<br>
+                <h2 class="sub-title">個別相談について</h2>
+                <div class="radius">
+                    <p>?</p>
+                </div>
+                <p>レポートに対してのフィードバックが欲しい方は<br>
                     下記入力フォームよりお申し込みください。
                 </p>
                 <div class="form-container">
@@ -583,12 +296,28 @@
                             <td><input size="20" type="text" class="txt-area" name="company_name" /></td>
                         </tr>
                         <tr>
-                            <th>お名前<span>必須</span></th>
+                            <th>担当者名<span>必須</span></th>
                             <td><input size="20" type="text" class="txt-area" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <th>部署名</th>
+                            <td><input size="30" type="text" class="txt-area" name="department_name" /></td>
+                        </tr>
+                        <tr>
+                            <th>役職名</th>
+                            <td><input size="30" type="text" class="txt-area" name="job_title" /></td>
                         </tr>
                         <tr>
                             <th>Mail（半角）</th>
                             <td><input size="30" type="text" class="txt-area" name="email" /></td>
+                        </tr>
+                        <tr>
+                            <th>携帯電話番号</th>
+                            <td><input size="30" type="text" class="txt-area" name="phone_number" /></td>
+                        </tr>
+                        <tr>
+                            <th>採用サイトへのリンク</th>
+                            <td><input size="30" type="text" class="txt-area" name="company_url" /></td>
                         </tr>
                         </table>
                         <div class="con_pri">

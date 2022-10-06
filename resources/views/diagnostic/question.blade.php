@@ -3,9 +3,11 @@
 @section('content')
     
     <div class="question-container">
-        <h1>診断スタート</h1>
-        <p>（約5分）</p>
-        <p>当てはまるものを一つ選択してください</p>
+        <div class="q-start">
+            <h1>診断スタート</h1>
+            <p>（約5分）</p>
+        </div>
+        <p class="choice">当てはまるものを一つ選択してください</p>
 
         <form action="/result" method="post" class="form-container">
             {{ csrf_field() }}
