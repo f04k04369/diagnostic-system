@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Noto Sans JP", sans-serif;
   color: #333333;
@@ -50,25 +51,26 @@ header .container img {
 }
 
 .submit-btn {
-  margin-top: 100px;
-  text-align: center;
-  width: 200px;
+  border: 2px #D98000 solid;
+  border-radius: 3px;
+  background-color: #D98000;
+  color: #fff;
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #00b5ad;
+  font-size: 24px;
+  margin-top: 100px;
+  padding: 1em 1.6em;
+  text-align: center;
   text-decoration: none;
+  transition: 0.4s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  border: 1px #00b5ad solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
+  width: 80%;
 }
 
 .submit-btn:hover {
-  color: #fff;
-  background-color: #00b5ad;
+  color: #D98000;
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -109,24 +111,26 @@ header .container img {
   border: 1px solid #00b5ad;
 }
 .form-container .submit-btn {
-  border: 1px #00b5ad solid;
+  border: 2px #D98000 solid;
   border-radius: 3px;
-  color: #00b5ad;
+  background-color: #D98000;
+  color: #fff;
   display: inline-block;
-  font-size: 0.8em;
+  font-size: 24px;
   margin-top: 100px;
-  padding: 0.4em 1.6em;
+  padding: 1em 1.6em;
   text-align: center;
   text-decoration: none;
   transition: 0.4s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  width: 200px;
+  width: 80%;
 }
 .form-container .submit-btn:hover {
-  color: #fff;
-  background-color: #00b5ad;
+  color: #D98000;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .home-container {
@@ -194,28 +198,113 @@ header .container img {
 .question-container .q-start p::before {
   position: absolute;
   bottom: -10px;
-  left: calc(50% - 30px);
-  width: 60px;
+  left: calc(50% - 100px);
+  width: 200px;
   height: 5px;
   content: "";
   border-radius: 3px;
-  background: #000;
+  background: #00ABAE;
 }
 .question-container .choice {
   margin-top: 80px;
+  color: #00ABAE;
 }
 .question-container form {
   margin-top: 100px;
 }
-.question-container form .question_word {
-  margin-bottom: 100px;
-}
 .question-container .question-box {
+  border: 3px solid #00ABAE;
   margin-bottom: 50px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #888888;
+  padding: 0 0 30px 0;
   width: 80%;
   max-width: 900px;
+  position: relative;
+}
+.question-container .question-box .answer-box {
+  display: flex;
+  justify-content: space-around;
+}
+.question-container .question-box .answer-box .radio-box .visually-hidden {
+  /* コンテンツの流れから切り離す */
+  position: absolute;
+  /* 誤ったコードに対処するための回避策 */
+  white-space: nowrap;
+  /* 可能な限り文字サイズを小さくするための処理
+   * (スクリーンリーダー中には height と width が 0 のものを無視するため)
+   */
+  width: 1px;
+  height: 1px;
+  /* オーバーフローしているコンテンツを隠す */
+  overflow: hidden;
+  /* 要素サイズを変更しうるプロパティのリセット */
+  border: 0;
+  padding: 0;
+  /* 要素のどの部分が表示されるかを定義するもの */
+  /* 古いブラウザでは使用できない */
+  clip: rect(0 0 0 0);
+  /* 最近のブラウザ用
+   * コンテンツを非表示にする設定  */
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  /* 今現在なぜ-1pxがここで設定されるかは分かっていないそうです。
+   * それに加えていくつか問題もあるそうです 
+   * (参考: https://github.com/h5bp/html5-boilerplate/issues/1985)
+   */
+  margin: -1px;
+}
+.question-container .question-box .answer-box .radio-box label {
+  cursor: pointer;
+  position: relative;
+}
+.question-container .question-box .answer-box .radio-box label::before,
+.question-container .question-box .answer-box .radio-box label::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.question-container .question-box .answer-box .radio-box label::before {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 3px solid #00ABAE;
+  box-shadow: 4px 4px 16px -6px rgba(0, 0, 0, 0.6);
+  width: 50px;
+  height: 50px;
+  top: -300%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.question-container .question-box .answer-box .radio-box label::after {
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  opacity: 0;
+  transform: translateX(-50%) rotate(-45deg);
+  height: 15px;
+  width: 30px;
+  top: -250%;
+  left: 50%;
+}
+.question-container .question-box .answer-box .radio-box input:checked + label::after {
+  opacity: 1;
+}
+.question-container .question-box .answer-box .radio-box input:checked + label::before {
+  background-color: #00ABAE;
+}
+.question-container .question-box .question-number {
+  background-color: #00ABAE;
+  color: #ffffff;
+  padding: 4px 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.question-container .question-box .question_word {
+  margin-bottom: 100px;
+  border-bottom: 1px dashed #000;
+  background-color: rgb(236, 235, 235);
+  padding: 24px;
 }
 
 #content {

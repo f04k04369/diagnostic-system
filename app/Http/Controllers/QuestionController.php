@@ -8,6 +8,6 @@ class QuestionController extends Controller
 {
     public function question(Request $request){
 
-        return view('diagnostic/question');
+        return view('diagnostic.question');
     }
 }
