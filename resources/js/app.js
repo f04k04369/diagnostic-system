@@ -11,7 +11,7 @@ Chart.plugins.register({
             if (!meta.hidden) {
                 meta.data.forEach(function (element, index) {
                     // 値の表示
-                    ctx.fillStyle = 'rgb(0, 0, 0,0.8)';//文字の色
+                    ctx.fillStyle = 'rgb(0, 0, 0, 1)';//文字の色
                     var fontSize = 12;//フォントサイズ
                     var fontStyle = 'normal';//フォントスタイル
                     var fontFamily = 'Arial';//フォントファミリー

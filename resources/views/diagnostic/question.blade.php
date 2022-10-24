@@ -25,15 +25,15 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_1" id="q1_1" class="visually-hidden" value=10>
-                        <label for="q1_1">十分にできている</label>
+                        <label for="q1_1">十分に<br>できている</label>
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_1" id="q1_2" class="visually-hidden" value=5>
-                        <label for="q1_2">できているが十分ではない</label>
+                        <label for="q1_2">できているが<br>十分ではない</label>
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_1" id="q1_3" class="visually-hidden" value=0>
-                        <label for="q1_3">できていない</label>
+                        <label for="q1_3">できていない<br><span>　</span></label>
                     </div>
                 </div>
 
@@ -50,17 +50,17 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_2" id="q2_1" class="visually-hidden" value=10>
-                        <label for="q2_1">十分にできている</label>
+                        <label for="q2_1">十分に<br>できている</label>
 
                     </div>
                     <div class="radio-box">
 
                         <input type="radio" name="point_2" id="q2_2" class="visually-hidden" value=5>
-                        <label for="q2_2">できているが十分ではない</label>
+                        <label for="q2_2">できているが<br>十分ではない</label>
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_2" id="q2_3" class="visually-hidden" value=0>
-                        <label for="q2_3">できていない</label>
+                        <label for="q2_3">できていない<br><span>　</span></label>
 
                     </div>
                 </div>
@@ -83,17 +83,17 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_3" id="q3_1" class="visually-hidden" value="10">
-                        <label for="q3_1">十分にできている</label>
+                        <label for="q3_1">十分に<br>できている</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_3" id="q3_2" class="visually-hidden" value="5">
-                        <label for="q3_2">できているが十分ではない</label>
+                        <label for="q3_2">できているが<br>十分ではない</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_3" id="q3_3" class="visually-hidden" value="0">
-                        <label for="q3_3">できていない</label>
+                        <label for="q3_3">できていない<br><span>　</span></label>
 
                     </div>
 
@@ -115,17 +115,17 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_4" id="q4_1" class="visually-hidden" value="10">
-                        <label for="q4_1">十分にできている</label>
+                        <label for="q4_1">十分に<br>できている</label>
 
                     </div>
                     <div class="radio-box">
 
                         <input type="radio" name="point_4" id="q4_2" class="visually-hidden" value="5">
-                        <label for="q4_2">できているが十分ではない</label>
+                        <label for="q4_2">できているが<br>十分ではない</label>
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_4" id="q4_3" class="visually-hidden" value="0">
-                        <label for="q4_3">できていない</label>
+                        <label for="q4_3">できていない<br><span>　</span></label>
 
                     </div>
                 </div>
@@ -146,17 +146,17 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_5" id="q5_1" class="visually-hidden" value="10">
-                        <label for="q5_1">十分にできている</label>
+                        <label for="q5_1">十分に<br>できている</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_5" id="q5_2" class="visually-hidden" value="5">
-                        <label for="q5_2">できているが十分ではない</label>
+                        <label for="q5_2">できているが<br>十分ではない</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_5" id="q5_3" class="visually-hidden" value="0">
-                        <label for="q5_3">できていない</label>
+                        <label for="q5_3">できていない<br><span>　</span></label>
 
                     </div>
                 </div>
@@ -178,16 +178,16 @@
                     <div class="radio-box">
 
                         <input type="radio" name="point_6" id="q6_1" class="visually-hidden" value="10">
-                        <label for="q6_1">十分にできている</label>
+                        <label for="q6_1">十分に<br>できている</label>
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_6" id="q6_2" class="visually-hidden" value="5">
-                        <label for="q6_2">できているが十分ではない</label>
+                        <label for="q6_2">できているが<br>十分ではない</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_6" id="q6_3" class="visually-hidden" value="0">
-                        <label for="q6_3">できていない</label>
+                        <label for="q6_3">できていない<br><span>　</span></label>
 
                     </div>
                 </div>
@@ -208,17 +208,17 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_7" id="q7_1" class="visually-hidden" value="10">
-                        <label for="q7_3">十分にできている</label>
+                        <label for="q7_1">十分に<br>できている</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_7" id="q7_2" class="visually-hidden" value="5">
-                        <label for="q7_3">できているが十分ではない</label>
+                        <label for="q7_2">できているが<br>十分ではない</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_7" id="q7_3" class="visually-hidden" value="0">
-                        <label for="q7_3">十分にできている</label>
+                        <label for="q7_3">できていない<br><span>　</span></label>
 
                     </div>
                 </div>
@@ -238,17 +238,17 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_8" id="q8_1" class="visually-hidden" value="10">
-                        <label for="q8_1">十分にできている</label>
+                        <label for="q8_1">十分に<br>できている</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_8" id="q8_2" class="visually-hidden" value="5">
-                        <label for="q8_2">できているが十分ではない</label>
+                        <label for="q8_2">できているが<br>十分ではない</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_8" id="q8_3" class="visually-hidden" value="0">
-                        <label for="q8_3">できていない</label>
+                        <label for="q8_3">できていない<br><span>　</span></label>
 
                     </div>
                 </div>
@@ -270,16 +270,16 @@
                     <div class="radio-box">
 
                         <input type="radio" name="point_9" id="q9_1" class="visually-hidden" value="10">
-                        <label for="q9_1">十分にできている</label>
+                        <label for="q9_1">十分に<br>できている</label>
                     </div>
                     <div class="radio-box">
 
                         <input type="radio" name="point_9" id="q9_2" class="visually-hidden" value="5">
-                        <label for="q9_2">できているが十分ではない</label>
+                        <label for="q9_2">できているが<br>十分ではない</label>
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_9" id="q9_3" class="visually-hidden" value="0">
-                        <label for="q9_3">できていない</label>
+                        <label for="q9_3">できていない<br><span>　</span></label>
 
                     </div>
                 </div>
@@ -301,17 +301,17 @@
 
                     <div class="radio-box">
                         <input type="radio" name="point_10" id="q10_1" class="visually-hidden" value="10">
-                        <label for="q10_1">十分にできている</label>
+                        <label for="q10_1">十分に<br>できている</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_10" id="q10_2" class="visually-hidden" value="5">
-                        <label for="q10_2">できているが十分ではない</label>
+                        <label for="q10_2">できているが<br>十分ではない</label>
 
                     </div>
                     <div class="radio-box">
                         <input type="radio" name="point_10" id="q10_3" class="visually-hidden" value="0">
-                        <label for="q10_3">できていない</label>
+                        <label for="q10_3">できていない<br><span>　</span></label>
 
                     </div>
 
