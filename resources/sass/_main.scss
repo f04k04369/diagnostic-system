@@ -400,6 +400,9 @@
         margin: 40px 0 80px 0;
         width: 100%;
 
+        @include m.mq(sp) {
+            margin: 40px 0;
+        }
         
         & .total_result__container{
             display: flex;
@@ -504,13 +507,17 @@
 }
 
 .category-results {
-    margin: 80px 0 80px 0;
+    margin: 80px 0;
     text-align: center;
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include m.mq(sp) {
+        margin: 40px 0;
+    }
     
     & .category-results__container {
         width: 100%;
@@ -624,12 +631,20 @@
     flex-direction: column;
     align-items: center;
 
+    @include m.mq(sp) {
+        margin: 40px 0 0 0;
+    }
+
     & .phase-container {
         height: auto;
         margin: 80px 0;
         width: 100%;
         padding-bottom: 40px;
         border-bottom:1px solid rgb(213, 212, 212);
+
+        @include m.mq(sp) {
+            margin: 20px 0;
+        }
         
         & .contaier {
             display: flex;
@@ -785,6 +800,10 @@
     align-items: center;
     margin: 40px 0;
 
+    @include m.mq(sp) {
+        margin: 20px 0;
+    }
+
     & .container {
         width: 70%;
 
@@ -834,6 +853,10 @@
     .private-meeting__img {
         margin: 40px 0 40px 0;
         width: 60%;
+        @include m.mq(sp) {
+            width: 90%;
+            margin: 40px 0 20px 0;
+        }
 
         & img {
             width: 100%;
@@ -850,8 +873,50 @@
         border: 3px solid #D98000;
         border-radius: 3px;
 
+        @include m.mq(sp) {
+            width: 95%;
+        }
+
+        & .submit-btn {
+
+            @include m.mq(sp) {
+                font-size: 16px;
+            }
+        }
+
         & .formTable {
             width: 100%;
+
+            & .sub-title {
+                @include m.mq(sp) {
+                    font-size: 18px;
+
+                }
+            }
+
+            & tbody {
+                & tr {
+
+                    @include m.mq(sp) {
+                        display: flex;
+                        flex-direction: column;
+
+                    }
+
+                    & th {
+                        @include m.mq(sp) {
+                            font-size: 12px;
+
+                        }
+                    }
+                    
+                    & .txt-area {
+                        @include m.mq(sp) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }
 
         & .con_pri {
@@ -860,6 +925,10 @@
             & h4 {
                 margin: 24px;
                 font-size: 32px;
+
+                @include m.mq(sp) {
+                    font-size: 24px;
+                }
             }
         }
 

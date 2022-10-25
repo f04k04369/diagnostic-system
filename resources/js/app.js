@@ -47,11 +47,11 @@ data:{//グラフのデータ
         {
           label: '診断結果',
           data: [result_data],
-          backgroundColor: "rgba(219,39,91,0.5)"
+          backgroundColor: "rgba(219,39,91,1)"
         },{
           label: '過去平均',
           data: [average],
-          backgroundColor: "rgba(130,201,169,0.5)"
+          backgroundColor: "rgba(130,201,169,1)"
         }
       ]
 

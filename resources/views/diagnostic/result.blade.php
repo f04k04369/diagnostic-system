@@ -307,34 +307,36 @@
                     <form method="post" action="/thanks">
                         {{ csrf_field() }}
                         <table class="formTable">
-                        <tr>
-                            <th>会社名<span>必須</span></th>
-                            <td><input size="20" type="text" class="txt-area" name="company_name" /></td>
-                        </tr>
-                        <tr>
-                            <th>担当者名<span>必須</span></th>
-                            <td><input size="20" type="text" class="txt-area" name="name" /></td>
-                        </tr>
-                        <tr>
-                            <th>部署名</th>
-                            <td><input size="30" type="text" class="txt-area" name="department_name" /></td>
-                        </tr>
-                        <tr>
-                            <th>役職名</th>
-                            <td><input size="30" type="text" class="txt-area" name="job_title" /></td>
-                        </tr>
-                        <tr>
-                            <th>Mail（半角）</th>
-                            <td><input size="30" type="text" class="txt-area" name="email" /></td>
-                        </tr>
-                        <tr>
-                            <th>携帯電話番号</th>
-                            <td><input size="30" type="text" class="txt-area" name="phone_number" /></td>
-                        </tr>
-                        <tr>
-                            <th>採用サイトへのリンク</th>
-                            <td><input size="30" type="text" class="txt-area" name="company_url" /></td>
-                        </tr>
+                            <h2 class="sub-title">個別相談申し込みフォーム</h2>
+
+                            <tr>
+                                <th>会社名<span>必須</span></th>
+                                <td><input size="20" type="text" class="txt-area" name="company_name" /></td>
+                            </tr>
+                            <tr>
+                                <th>担当者名<span>必須</span></th>
+                                <td><input size="20" type="text" class="txt-area" name="name" /></td>
+                            </tr>
+                            <tr>
+                                <th>部署名</th>
+                                <td><input size="30" type="text" class="txt-area" name="department_name" /></td>
+                            </tr>
+                            <tr>
+                                <th>役職名</th>
+                                <td><input size="30" type="text" class="txt-area" name="job_title" /></td>
+                            </tr>
+                            <tr>
+                                <th>Mail（半角）</th>
+                                <td><input size="30" type="text" class="txt-area" name="email" /></td>
+                            </tr>
+                            <tr>
+                                <th>携帯電話番号</th>
+                                <td><input size="30" type="text" class="txt-area" name="phone_number" /></td>
+                            </tr>
+                            <tr>
+                                <th>採用サイトへのリンク</th>
+                                <td><input size="30" type="text" class="txt-area" name="company_url" /></td>
+                            </tr>
                         </table>
                         <div class="con_pri">
                             <div class="box_pri">
